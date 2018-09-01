@@ -17,20 +17,39 @@
   <backgrounds name="background">
     <background>background\bg_map</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_yellow</path>
+    <path>paths\pth_blue</path>
+    <path>paths\pth_green</path>
+  </paths>
   <objects name="objects">
     <object>objects\obj_castle</object>
     <object>objects\obj_palace</object>
     <object>objects\obj_road</object>
-    <object>objects\obj_spawn</object>
+    <object>objects\obj_spawn_yellow</object>
+    <object>objects\obj_spawn_blue</object>
+    <object>objects\obj_spawn_green</object>
     <object>objects\obj_enemy</object>
+    <object>objects\obj_kingdom</object>
     <object>objects\obj_catapult</object>
     <object>objects\obj_firetower</object>
     <object>objects\obj_archertower</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rm_map</room>
   </rooms>
+  <constants number="10">
+    <constant name="DEBUG">true</constant>
+    <constant name="BLUE_SPEED">4</constant>
+    <constant name="GREEN_HEALTH">5</constant>
+    <constant name="BLUE_HEALTH">2</constant>
+    <constant name="YELLOW_HEALTH">1</constant>
+    <constant name="GREEN_SPEED">1</constant>
+    <constant name="YELLOW_SPEED">2</constant>
+    <constant name="GREEN_SPAWN_RATE">120</constant>
+    <constant name="BLUE_SPAWN_RATE">60</constant>
+    <constant name="YELLOW_SPAWN_RATE">30</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
