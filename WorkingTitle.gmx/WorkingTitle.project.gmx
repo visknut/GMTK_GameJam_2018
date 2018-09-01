@@ -6,8 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_road</sprite>
-    <sprite>sprites\spr_enemy</sprite>
     <sprites name="gui_buttons">
       <sprite>sprites\spr_button_favour</sprite>
       <sprite>sprites\spr_button_build</sprite>
@@ -33,12 +31,19 @@
       <sprite>sprites\spr_palace</sprite>
       <sprite>sprites\spr_catapult</sprite>
       <sprite>sprites\spr_archertower</sprite>
+      <sprite>sprites\spr_road</sprite>
       <sprites name="ranges">
         <sprite>sprites\spr_palace_range</sprite>
         <sprite>sprites\spr_archertower_range</sprite>
         <sprite>sprites\spr_catapult_range</sprite>
         <sprite>sprites\spr_firetower_range</sprite>
       </sprites>
+    </sprites>
+    <sprites name="misc">
+      <sprite>sprites\spr_mugshot</sprite>
+      <sprite>sprites\sprite24</sprite>
+      <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_reread</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -59,6 +64,10 @@
         <script>scripts\scr_draw_build_buttons.gml</script>
         <script>scripts\scr_draw_structure.gml</script>
         <script>scripts\scr_build_structure.gml</script>
+      </scripts>
+      <scripts name="message">
+        <script>scripts\scr_draw_mugshot.gml</script>
+        <script>scripts\scr_draw_message.gml</script>
       </scripts>
     </scripts>
     <script>scripts\scr_draw_button.gml</script>
@@ -98,11 +107,14 @@
       <object>objects\obj_spawn_yellow</object>
       <object>objects\obj_spawn_blue</object>
     </objects>
+    <objects name="structs">
+      <object>objects\struct_message</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_map</room>
   </rooms>
-  <constants number="27">
+  <constants number="32">
     <constant name="RANGE_CATAPULT">3</constant>
     <constant name="PRICE_CATAPULT">40</constant>
     <constant name="BUILD_CATAPULT">1</constant>
@@ -130,6 +142,11 @@
     <constant name="RANGE_FIRETOWER">1</constant>
     <constant name="RANGE_ARCHERTOWER">2</constant>
     <constant name="RANGE_PALACE">0</constant>
+    <constant name="CHAR_KING">0</constant>
+    <constant name="CHAR_QUEEN">1</constant>
+    <constant name="CHAR_DIPLOMAT">2</constant>
+    <constant name="CHAR_GENERAL">3</constant>
+    <constant name="CHAR_NOP">-1</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

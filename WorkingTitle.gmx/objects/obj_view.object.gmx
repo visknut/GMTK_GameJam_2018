@@ -53,12 +53,12 @@ image_speed = 0.5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Stop showing build if not in build view.
+            <string>/// ****DISABLED**** Stop showing build if not in build view.
 
-if (current_view != VIEW_BUILD)
-{
-    current_build = BUILD_NONE;
-}
+//if (current_view != VIEW_BUILD)
+//{
+//    current_build = BUILD_NONE;
+//}
 </string>
           </argument>
         </arguments>
