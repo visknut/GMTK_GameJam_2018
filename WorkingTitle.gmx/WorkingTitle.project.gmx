@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_castle</sprite>
+    <sprite>sprites\spr_palace</sprite>
     <sprite>sprites\spr_road</sprite>
     <sprite>sprites\spr_enemy</sprite>
     <sprite>sprites\spr_catapult</sprite>
@@ -19,6 +20,7 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_castle</object>
+    <object>objects\obj_palace</object>
     <object>objects\obj_road</object>
     <object>objects\obj_spawn</object>
     <object>objects\obj_enemy</object>
