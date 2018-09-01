@@ -42,10 +42,7 @@ alarm[0] = -1;
 alarm[1] = -1;
 read_messages = ds_queue_create();
 
-var _welcome_message = instance_create(0, 0, struct_message);
-_welcome_message.character = CHAR_KING;
-_welcome_message.content = "Welcome!";
-ds_queue_enqueue(messages, _welcome_message);
+ds_queue_enqueue(messages, scr_create_message(CHAR_KING, "Welcome!#Let's celebrate your arrival with a glass of wine!"));
 
 </string>
           </argument>

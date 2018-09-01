@@ -69,6 +69,7 @@ if (ds_queue_empty(obj_kingdom.messages))
 with (obj_view)
 {
     current_view = VIEW_MESSAGE;
+    alarm[0] = -2; //reset scr_draw_str_cbyc alarm
 }
 </string>
           </argument>
