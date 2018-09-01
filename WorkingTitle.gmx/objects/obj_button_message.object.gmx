@@ -81,8 +81,22 @@ with (obj_view)
             <kind>1</kind>
             <string>/// Draw message count.
 
+var _message_count;
+
 draw_self();
 
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_set_colour(c_black);
+draw_roundrect(x + 10, y + 38, x + 28, y + 56, false);
+
+draw_set_colour(c_white);
+draw_set_font(fnt_small);
+with (obj_kingdom)
+{
+    _message_count = ds_queue_size(messages);
+}
+draw_text(x + 16, y + 42, string(_message_count));
 
 </string>
           </argument>
