@@ -17,9 +17,6 @@ if (argument_count > 6) {
     _alpha = argument[6]
 }
 
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-
 draw_sprite_ext(_sprite, _sub_sprite, _button_x, _button_y, _scale, _scale, 0, c_white, _alpha);
 
 // Draw the text ontop of the button.

@@ -24,7 +24,12 @@ switch (current_build)
         break;
     case BUILD_PALACE:
         _sprite = spr_palace;
-        _range = spr_palace_range;
+        _range = spr_no_range;
+        mask_index = spr_medium_mask;
+        break;
+    case BUILD_FARM:
+        _sprite = spr_farm;
+        _range = spr_no_range;
         mask_index = spr_medium_mask;
         break;
 }

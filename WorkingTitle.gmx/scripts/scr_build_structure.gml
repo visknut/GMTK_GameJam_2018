@@ -24,7 +24,7 @@ switch (current_build)
     case BUILD_ARCHERTOWER:
         with (obj_kingdom)
         {
-           money -= PRICE_ARCHER_TOWER;
+           money -= PRICE_ARCHERTOWER;
         }
         instance_create(_x, _y, obj_archertower);
         break;
@@ -34,5 +34,12 @@ switch (current_build)
            money -= PRICE_PALACE;
         }
         instance_create(_x, _y, obj_palace);
+        break;
+    case BUILD_FARM:
+        with (obj_kingdom)
+        {
+           money -= PRICE_FARM;
+        }
+        instance_create(_x, _y, obj_farm);
         break;
 }

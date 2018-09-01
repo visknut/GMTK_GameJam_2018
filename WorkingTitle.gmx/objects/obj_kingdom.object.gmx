@@ -211,9 +211,7 @@ global.mode = MODE_INTERMISSION;
 alarm[2] = 120;
 alarm[5] = 60;
 
-instance_destroy(obj_spawn_yellow);
-instance_destroy(obj_spawn_green);
-instance_destroy(obj_spawn_blue);
+instance_destroy(obj_spawn);
 </string>
           </argument>
         </arguments>
@@ -238,11 +236,11 @@ instance_destroy(obj_spawn_blue);
             <kind>1</kind>
             <string>/// Start wave
 
-alarm[1] = 220;
+alarm[1] = 600;
 
-instance_create(160, 304, obj_spawn_yellow);
-instance_create(368, 400, obj_spawn_green);
-instance_create(544, 288, obj_spawn_blue);
+scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE, pth_yellow, YELLOW_HEALTH, YELLOW_SPEED);
+scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE, pth_green, GREEN_HEALTH, GREEN_SPEED);
+scr_create_spawn(544, 288, c_blue, BLUE_SPAWN_RATE, pth_blue, BLUE_HEALTH, BLUE_SPEED);
 </string>
           </argument>
         </arguments>
