@@ -55,6 +55,12 @@
     <instance objName="obj_spawn_yellow" x="176" y="304" name="inst_26DD9920" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_blue" x="528" y="288" name="inst_E4E9702D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn_green" x="368" y="384" name="inst_43A9976B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_build" x="656" y="0" name="inst_5BFB2E82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_message" x="592" y="0" name="inst_9E32B6C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_favour" x="528" y="0" name="inst_2A29E6D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_money" x="416" y="0" name="inst_525C13D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_kingdom" x="0" y="0" name="inst_B3B8B4C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_view" x="16" y="0" name="inst_1254CD9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
