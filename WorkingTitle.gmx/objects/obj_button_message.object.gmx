@@ -96,6 +96,7 @@ with (obj_kingdom)
 {
     _message_count = ds_queue_size(messages);
 }
+
 draw_text(x + 16, y + 42, string(_message_count));
 
 </string>

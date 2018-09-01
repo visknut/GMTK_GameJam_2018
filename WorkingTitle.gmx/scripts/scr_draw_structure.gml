@@ -10,18 +10,22 @@ switch (current_build)
     case BUILD_CATAPULT:
          _sprite = spr_catapult;
          _range = spr_catapult_range;
+         mask_index = spr_small_mask;
         break;
     case BUILD_FIRETOWER:
          _sprite = spr_firetower;
          _range = spr_firetower_range;
+         mask_index = spr_small_mask;
         break;
     case BUILD_ARCHERTOWER:
          _sprite = spr_archertower;
          _range = spr_archertower_range;
+         mask_index = spr_small_mask;
         break;
     case BUILD_PALACE:
-         _sprite = spr_palace;
-         _range = spr_palace_range;
+        _sprite = spr_palace;
+        _range = spr_palace_range;
+        mask_index = spr_medium_mask;
         break;
 }
 

@@ -101,10 +101,7 @@
     <instance objName="obj_road" x="416" y="352" name="inst_C749020B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="368" y="384" name="inst_1D9B31F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="528" y="288" name="inst_9FC73311" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn_yellow" x="160" y="304" name="inst_F4F8F1E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="192" y="304" name="inst_7F506301" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn_green" x="368" y="400" name="inst_046BC197" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spawn_blue" x="544" y="288" name="inst_907B6CC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="416" y="304" name="inst_1EC405C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="416" y="320" name="inst_582CBACA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="416" y="336" name="inst_5FC5C785" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
