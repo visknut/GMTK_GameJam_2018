@@ -35,6 +35,7 @@ green_damage = 0;
 
 wave = 0;
 money = 100;
+embezzled_money = 0;
 
 alarm[0] = -1;
 alarm[1] = -1;
@@ -44,9 +45,17 @@ messages = ds_queue_create();
 read_messages = ds_queue_create();
 scr_enqueue_message(CHAR_KING, "Welcome!#Let's celebrate your arrival with a glass of wine!");
 
+favour_qeeun = 5;
+favour_king = 5;
+favour_general = 5;
+favour_diplomat = 5;
+
+ds_queue_enqueue(messages, scr_create_message(CHAR_KING, "Welcome!#Let's celebrate your arrival with a glass of wine!"));
 //General: total damage expressions
 general_total_damage_classes = ar("their total annihilation.", "mildly inconvenient", "though for us to handle.", "your downfall from his majesties favourite spot.", "our total annihilation");
 
+character_fired = "";
+text_fired = "";
 //General: predictions
 //Diplomat: predictions
 
@@ -55,6 +64,50 @@ general_total_damage_classes = ar("their total annihilation.", "mildly inconveni
 //King
 
 //Queen
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialise enemy variables.
+
+blue_speed_modifier = 1;
+blue_damage_modifier = 1;
+blue_spawn_modifier = 1;
+green_speed_modifier = 1;
+green_damage_modifier = 1;
+green_spawn_modifier = 1;
+yellow_speed_modifier = 1;
+yellow_damage_modifier = 1;
+yellow_spawn_modifier = 1;
+
+yellow_tributed = false;
+yellow_tributed = false;
+yellow_tributed = false;
+
+collaberated_yellow_green_west = false;
+collaberated_yellow_green_south = false;
+
+collaberated_blue_green_east = false;
+collaberated_blue_green_south = false;
+
+collaberated_yellow_blue_east = false;
+collaberated_yellow_blue_west = false;
 </string>
           </argument>
         </arguments>
@@ -80,6 +133,31 @@ general_total_damage_classes = ar("their total annihilation.", "mildly inconveni
             <string>/// Destroy data structures.
 
 ds_queue_destroy(messages);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Fire the player
+
+
 </string>
           </argument>
         </arguments>
@@ -164,12 +242,41 @@ instance_deactivate_object(obj_button_start_wave);
             <kind>1</kind>
             <string>/// Initiate wave sequence 3-0/4-1-2/5-(6)
 
-alarm[0] = 120;
-alarm[4] = 60; // deactivate buttons
+// Reset the damage on the castle.
+yellow_damage = 0;
+blue_damage = 0;
+green_damage = 0;
 
-wave += 1;
-global.mode = MODE_WAVE;
-obj_view.current_view = VIEW_NONE;
+if (favour_qeeun &gt; 0 &amp;&amp; favour_king &gt; 0 &amp;&amp; favour_diplomat &gt; 0 &amp;&amp; favour_general &gt; 0)
+{
+    alarm[0] = 120;
+    alarm[4] = 60;
+    wave += 1;
+    global.mode = MODE_WAVE;
+    obj_view.current_view = VIEW_NONE;
+} else
+{
+    global.mode = MODE_FIRED;
+    if (favour_king == 0)
+    {
+        character_fired = "king";
+        text_fired = "You disregarded what is the most important:#maintaining the respect of the people.";
+    } else if (favour_general == 0)
+    {
+        character_fired = "general";
+        text_fired = "You disregarded what is the most important:#ensuring the safety of the country.";
+    } else if (favour_qeeun == 0)
+    {
+        character_fired = "queen";
+        text_fired = "You disregarded what is the most important:#ensuring the prosperty of the poeple.";
+    } else if (favour_diplomat == 0)
+    {
+        character_fired = "diplomat";
+        text_fired = "You disregarded what is the most important:#maintaining the good relations with our neighbours.";
+    }
+    alarm[6] = 60;
+}
+
 </string>
           </argument>
         </arguments>
@@ -257,11 +364,32 @@ scr_enqueue_message(CHAR_QUEEN, "");
 
 // Clean up and start new day
 
+/* reset all wave variables. */
+yellow_tributed = false;
+yellow_tributed = false;
+yellow_tributed = false;
+
+collaberated_yellow_green_west = false;
+collaberated_yellow_green_south = false;
+
+collaberated_blue_green_east = false;
+collaberated_blue_green_south = false;
+
+collaberated_yellow_blue_east = false;
+collaberated_yellow_blue_west = false;
+
 global.mode = MODE_INTERMISSION;
 alarm[2] = 120;
 alarm[5] = 60;
 
+room_speed = 30;
+
+// Destory all spawns and remaining enemies.
 instance_destroy(obj_spawn);
+with (obj_enemy)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -287,6 +415,11 @@ instance_destroy(obj_spawn);
             <string>/// Start wave
 
 alarm[1] = 600;
+
+if (!DEBUG)
+{
+    room_speed = 1000;
+}
 
 scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE, pth_yellow, YELLOW_HEALTH, YELLOW_SPEED);
 scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE, pth_green, GREEN_HEALTH, GREEN_SPEED);
@@ -327,6 +460,13 @@ scr_create_spawn(544, 288, c_blue, BLUE_SPAWN_RATE, pth_blue, BLUE_HEALTH, BLUE_
         draw_set_alpha(1);
     }
     
+/*    if (alarm[0] &lt; 90 &amp;&amp; alarm[0] &gt; 75)
+    {
+        draw_set_alpha(1 - ease_in_quint(alarm[0] - 75, 0, 1, 15));
+    } else if (alarm[0] &lt; 45 &amp;&amp; alarm[0] &gt; 30)
+    {
+        draw_set_alpha(ease_in_quint(alarm[0] - 30, 0, 1, 15));
+    }*/
     draw_rectangle(0, 0, 720, 560, false);
     draw_set_colour(c_white);
     draw_set_font(fnt_xxl);
@@ -354,6 +494,14 @@ if (global.mode == MODE_INTERMISSION &amp;&amp; alarm[2] &gt; 0)
         draw_set_alpha(1);
     }
     draw_rectangle(0, 0, 720, 560, false);
+    
+/*    if (alarm[2] &lt; 90 &amp;&amp; alarm[2] &gt; 75)
+    {
+        draw_set_alpha(1 - ease_in_quint(alarm[2] - 75, 0, 1, 15));
+    } else if (alarm[2] &lt; 45 &amp;&amp; alarm[2] &gt; 30)
+    {
+        draw_set_alpha(ease_in_quint(alarm[2] - 30, 0, 1, 15));
+    }*/
     draw_set_colour(c_black);
     draw_set_font(fnt_xxl);
     draw_set_valign(fa_middle);
@@ -362,6 +510,32 @@ if (global.mode == MODE_INTERMISSION &amp;&amp; alarm[2] &gt; 0)
     // Reset aligned.
     draw_set_valign(fa_left);
     draw_set_halign(fa_top);
+    // Reset alpha.
+    draw_set_alpha(1);
+}
+
+if (global.mode == MODE_FIRED)
+{
+    draw_set_colour(c_black);
+    draw_set_alpha(1 - ease_out_quint(alarm[6] - 30, 0, 1, 30));
+    draw_rectangle(0, 0, 720, 560, false);
+    
+    if (alarm[6] &lt; 30)
+    {
+        draw_set_alpha(1 - ease_out_quint(alarm[6], 0, 1, 30));
+        draw_set_colour(c_white);
+        draw_set_font(fnt_large);
+        draw_set_valign(fa_middle);
+        draw_set_halign(fa_center);
+        draw_text(360, 200, "You were fired by the " + character_fired + "!");
+        draw_set_font(fnt_medium);
+        draw_text(360, 240, text_fired);
+        draw_text(360, 320, "However, you did manage to embezzle " + string(money) + " gold...");
+        // Reset aligned.
+        draw_set_valign(fa_left);
+        draw_set_halign(fa_top);
+    }
+
     // Reset alpha.
     draw_set_alpha(1);
 }
