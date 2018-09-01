@@ -13,6 +13,10 @@
     <sprite>sprites\spr_catapult</sprite>
     <sprite>sprites\spr_firetower</sprite>
     <sprite>sprites\spr_archertower</sprite>
+    <sprite>sprites\spr_hammer</sprite>
+    <sprite>sprites\spr_favour</sprite>
+    <sprite>sprites\spr_conversation</sprite>
+    <sprite>sprites\spr_start_wave</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_map</background>
@@ -34,6 +38,10 @@
     <object>objects\obj_catapult</object>
     <object>objects\obj_firetower</object>
     <object>objects\obj_archertower</object>
+    <object>objects\obj_hammer</object>
+    <object>objects\obj_favour</object>
+    <object>objects\obj_conversation</object>
+    <object>objects\obj_start_wave</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_map</room>
