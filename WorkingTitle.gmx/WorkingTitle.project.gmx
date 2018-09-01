@@ -70,6 +70,7 @@
         <script>scripts\scr_draw_mugshot.gml</script>
         <script>scripts\scr_draw_message.gml</script>
         <script>scripts\scr_draw_str_cbyc.gml</script>
+        <script>scripts\scr_enqueue_message.gml</script>
       </scripts>
     </scripts>
     <script>scripts\scr_draw_button.gml</script>
@@ -79,9 +80,7 @@
       <script>scripts\ease_out_quint.gml</script>
       <script>scripts\ease_in_quint.gml</script>
     </scripts>
-    <scripts name="structs">
-      <script>scripts\scr_create_message.gml</script>
-    </scripts>
+    <script>scripts\ar.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_large</font>
@@ -103,8 +102,8 @@
       <object>objects\obj_palace</object>
       <object>objects\obj_castle</object>
       <object>objects\obj_road</object>
-      <object>objects\obj_firetower</object>
       <object>objects\obj_archertower</object>
+      <object>objects\obj_firetower</object>
     </objects>
     <objects name="gui_buttons">
       <object>objects\obj_button_start_wave</object>
@@ -126,42 +125,46 @@
   <rooms name="rooms">
     <room>rooms\rm_map</room>
   </rooms>
-  <constants number="35">
-    <constant name="MODE_INTERMISSION">0</constant>
-    <constant name="RANGE_CATAPULT">3</constant>
-    <constant name="PRICE_CATAPULT">40</constant>
-    <constant name="BUILD_CATAPULT">1</constant>
-    <constant name="VIEW_BUILD">1</constant>
-    <constant name="DEBUG">true</constant>
-    <constant name="BLUE_SPEED">4</constant>
-    <constant name="GREEN_HEALTH">5</constant>
+  <constants number="39">
     <constant name="BLUE_HEALTH">2</constant>
-    <constant name="YELLOW_HEALTH">1</constant>
-    <constant name="GREEN_SPEED">1</constant>
-    <constant name="YELLOW_SPEED">2</constant>
-    <constant name="GREEN_SPAWN_RATE">120</constant>
+    <constant name="BLUE_NAME">"Blue"</constant>
     <constant name="BLUE_SPAWN_RATE">60</constant>
-    <constant name="YELLOW_SPAWN_RATE">30</constant>
-    <constant name="VIEW_NONE">0</constant>
-    <constant name="VIEW_FAVOUR">2</constant>
-    <constant name="VIEW_MESSAGE">3</constant>
-    <constant name="BUILD_NONE">0</constant>
+    <constant name="BLUE_SPEED">4</constant>
     <constant name="BUILD_ARCHERTOWER">2</constant>
+    <constant name="BUILD_CATAPULT">1</constant>
     <constant name="BUILD_FIRETOWER">3</constant>
+    <constant name="BUILD_NONE">0</constant>
     <constant name="BUILD_PALACE">4</constant>
-    <constant name="PRICE_FIRETOWER">60</constant>
-    <constant name="PRICE_ARCHERTOWER">40</constant>
-    <constant name="PRICE_PALACE">140</constant>
-    <constant name="RANGE_FIRETOWER">1</constant>
-    <constant name="RANGE_ARCHERTOWER">2</constant>
-    <constant name="RANGE_PALACE">0</constant>
-    <constant name="MODE_WAVE">1</constant>
-    <constant name="CHAR_KING">0</constant>
-    <constant name="CHAR_QUEEN">1</constant>
+    <constant name="CHAR_CLERK">4</constant>
     <constant name="CHAR_DIPLOMAT">2</constant>
     <constant name="CHAR_GENERAL">3</constant>
+    <constant name="CHAR_KING">0</constant>
     <constant name="CHAR_NOP">-1</constant>
+    <constant name="CHAR_QUEEN">1</constant>
+    <constant name="DEBUG">true</constant>
+    <constant name="GREEN_HEALTH">5</constant>
+    <constant name="GREEN_NAME">"Green"</constant>
+    <constant name="GREEN_SPAWN_RATE">120</constant>
+    <constant name="GREEN_SPEED">1</constant>
+    <constant name="MODE_INTERMISSION">0</constant>
+    <constant name="MODE_WAVE">1</constant>
+    <constant name="PRICE_ARCHERTOWER">40</constant>
+    <constant name="PRICE_CATAPULT">40</constant>
+    <constant name="PRICE_FIRETOWER">60</constant>
+    <constant name="PRICE_PALACE">140</constant>
+    <constant name="RANGE_ARCHERTOWER">2</constant>
+    <constant name="RANGE_CATAPULT">3</constant>
+    <constant name="RANGE_FIRETOWER">1</constant>
+    <constant name="RANGE_PALACE">0</constant>
     <constant name="TEXT_SPEED">2</constant>
+    <constant name="VIEW_BUILD">1</constant>
+    <constant name="VIEW_FAVOUR">2</constant>
+    <constant name="VIEW_MESSAGE">3</constant>
+    <constant name="VIEW_NONE">0</constant>
+    <constant name="YELLOW_HEALTH">1</constant>
+    <constant name="YELLOW_NAME">"Yellow"</constant>
+    <constant name="YELLOW_SPAWN_RATE">30</constant>
+    <constant name="YELLOW_SPEED">2</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

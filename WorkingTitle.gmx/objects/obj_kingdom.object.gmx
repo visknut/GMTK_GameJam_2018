@@ -36,14 +36,25 @@ green_damage = 0;
 wave = 0;
 money = 100;
 
-messages = ds_queue_create();
-
 alarm[0] = -1;
 alarm[1] = -1;
+
+read_all = false;
+messages = ds_queue_create();
 read_messages = ds_queue_create();
+scr_enqueue_message(CHAR_KING, "Welcome!#Let's celebrate your arrival with a glass of wine!");
 
-ds_queue_enqueue(messages, scr_create_message(CHAR_KING, "Welcome!#Let's celebrate your arrival with a glass of wine!"));
+//General: total damage expressions
+general_total_damage_classes = ar("their total annihilation.", "mildly inconvenient", "though for us to handle.", "your downfall from his majesties favourite spot.", "our total annihilation");
 
+//General: predictions
+//Diplomat: predictions
+
+//Clerk
+
+//King
+
+//Queen
 </string>
           </argument>
         </arguments>
@@ -151,15 +162,14 @@ instance_deactivate_object(obj_button_start_wave);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Show wave number.
+            <string>/// Initiate wave sequence 3-0/4-1-2/5-(6)
 
 alarm[0] = 120;
-alarm[4] = 60;
+alarm[4] = 60; // deactivate buttons
+
 wave += 1;
 global.mode = MODE_WAVE;
 obj_view.current_view = VIEW_NONE;
-
-
 </string>
           </argument>
         </arguments>
@@ -206,6 +216,46 @@ obj_view.current_view = VIEW_NONE;
           <argument>
             <kind>1</kind>
             <string>/// End wave
+
+
+// We don't want old messages messing up the inbox
+ds_queue_clear(obj_kingdom.messages);
+ds_queue_clear(obj_kingdom.read_messages);
+obj_kingdom.read_all = false;
+
+// results
+var _most_damage = BLUE_NAME;
+if (yellow_damage &gt; blue_damage || green_damage &gt; blue_damage)
+{
+    if (green_damage &gt; yellow_damage)
+        _most_damage = GREEN_NAME;
+    else
+        _most_damage = YELLOW_NAME;
+}
+var _tot_damage = yellow_damage + green_damage + blue_damage;
+var _damage_class = _tot_damage % array_length_1d(general_total_damage_classes);
+
+scr_enqueue_message(CHAR_GENERAL, ""+
+"Good morning High Constable,"+
+"it seems that yesterday did not bring the accursed enemies unto our doorstep." +
+"That is a good thing, since that would have been " + general_total_damage_classes[_damage_class]);
+
+// events
+
+// predictions
+scr_enqueue_message(CHAR_GENERAL, "");
+scr_enqueue_message(CHAR_DIPLOMAT, "");
+
+// daily income
+scr_enqueue_message(CHAR_CLERK, "");
+
+// dilliances
+scr_enqueue_message(CHAR_KING, "");
+scr_enqueue_message(CHAR_QUEEN, "");
+
+
+
+// Clean up and start new day
 
 global.mode = MODE_INTERMISSION;
 alarm[2] = 120;

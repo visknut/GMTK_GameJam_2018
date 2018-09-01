@@ -63,7 +63,7 @@ if (ds_queue_empty(obj_kingdom.messages))
     ds_queue_copy(obj_kingdom.messages, obj_kingdom.read_messages);
     ds_queue_clear(obj_kingdom.read_messages);
     // signal that all messages have been read
-    read_all = true;
+    obj_kingdom.read_all = true;
 }
 
 with (obj_view)
@@ -106,16 +106,14 @@ draw_roundrect(x + 10, y + 38, x + 28, y + 56, false);
 
 draw_set_colour(c_white);
 draw_set_font(fnt_small);
-if (read_all)
+if (obj_kingdom.read_all)
 {
     draw_sprite(spr_reread, 0, x + 14, y + 42);
 }
 else
 {
-    with (obj_kingdom)
-    {
-        _message_count = ds_queue_size(messages);
-    }
+    _message_count = ds_queue_size(obj_kingdom.messages);
+
     draw_text(x + 18, y + 42, string(_message_count));
 }
 </string>

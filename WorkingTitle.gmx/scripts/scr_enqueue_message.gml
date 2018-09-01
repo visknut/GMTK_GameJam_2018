@@ -2,4 +2,4 @@
 var _message = instance_create(0, 0, struct_message);
 _message.character = argument[0];
 _message.content = argument[1];
-return _message
+ds_queue_enqueue(obj_kingdom.messages, _message);
