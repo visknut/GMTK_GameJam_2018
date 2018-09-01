@@ -2,8 +2,8 @@
 <object>
   <spriteName>sprite24</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
-  <depth>0</depth>
+  <visible>-1</visible>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -27,13 +27,19 @@
             <kind>1</kind>
             <string>/// Initialise variables
 
+global.mode = MODE_INTERMISSION;
+
 yellow_damage = 0;
 blue_damage = 0;
 green_damage = 0;
 
+wave = 0;
 money = 100;
 
 messages = ds_queue_create();
+
+alarm[0] = -1;
+alarm[1] = -1;
 read_messages = ds_queue_create();
 
 var _welcome_message = instance_create(0, 0, struct_message);
@@ -66,6 +72,254 @@ ds_queue_enqueue(messages, _welcome_message);
             <string>/// Destroy data structures.
 
 ds_queue_destroy(messages);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Activate buttons.
+
+instance_activate_object(obj_view);
+instance_activate_object(obj_button_message);
+instance_activate_object(obj_button_money);
+instance_activate_object(obj_button_favour);
+instance_activate_object(obj_button_build);
+instance_activate_object(obj_button_start_wave);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Deactivate buttons.
+
+instance_deactivate_object(obj_view);
+instance_deactivate_object(obj_button_message);
+instance_deactivate_object(obj_button_money);
+instance_deactivate_object(obj_button_favour);
+instance_deactivate_object(obj_button_build);
+instance_deactivate_object(obj_button_start_wave);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Show wave number.
+
+alarm[0] = 120;
+alarm[4] = 60;
+wave += 1;
+global.mode = MODE_WAVE;
+obj_view.current_view = VIEW_NONE;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Show day
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// End wave
+
+global.mode = MODE_INTERMISSION;
+alarm[2] = 120;
+alarm[5] = 60;
+
+instance_destroy(obj_spawn_yellow);
+instance_destroy(obj_spawn_green);
+instance_destroy(obj_spawn_blue);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Start wave
+
+alarm[1] = 220;
+
+instance_create(160, 304, obj_spawn_yellow);
+instance_create(368, 400, obj_spawn_green);
+instance_create(544, 288, obj_spawn_blue);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.mode == MODE_WAVE &amp;&amp; alarm[0] &gt; 0)
+{
+    draw_set_colour(c_black);
+    if (alarm[0] &gt; 90)
+    {
+        draw_set_alpha(1 - ease_out_quint(alarm[0] - 90, 0, 1, 30));
+    } else if (alarm[0] &lt; 30)
+    {
+    
+        draw_set_alpha(ease_in_quint(alarm[0], 0, 1, 30));
+    } else {
+        draw_set_alpha(1);
+    }
+    
+    draw_rectangle(0, 0, 720, 560, false);
+    draw_set_colour(c_white);
+    draw_set_font(fnt_xxl);
+    draw_set_valign(fa_middle);
+    draw_set_halign(fa_center);
+    draw_text(360, 280, "wave " + string(wave));
+    // Reset aligned.
+    draw_set_valign(fa_left);
+    draw_set_halign(fa_top);
+    // Reset alpha.
+    draw_set_alpha(1);
+}
+
+if (global.mode == MODE_INTERMISSION &amp;&amp; alarm[2] &gt; 0)
+{
+    draw_set_colour(c_white);
+    if (alarm[2] &gt; 90)
+    {
+        draw_set_alpha(1 - ease_out_quint(alarm[2] - 90, 0, 1, 30));
+    } else if (alarm[2] &lt; 30)
+    {
+    
+        draw_set_alpha(ease_in_quint(alarm[2], 0, 1, 30));
+    } else {
+        draw_set_alpha(1);
+    }
+    draw_rectangle(0, 0, 720, 560, false);
+    draw_set_colour(c_black);
+    draw_set_font(fnt_xxl);
+    draw_set_valign(fa_middle);
+    draw_set_halign(fa_center);
+    draw_text(360, 280, "day " + string(wave));
+    // Reset aligned.
+    draw_set_valign(fa_left);
+    draw_set_halign(fa_top);
+    // Reset alpha.
+    draw_set_alpha(1);
+}
 </string>
           </argument>
         </arguments>

@@ -38,6 +38,7 @@
         <sprite>sprites\spr_catapult_range</sprite>
         <sprite>sprites\spr_firetower_range</sprite>
       </sprites>
+      <sprite>sprites\spr_farm</sprite>
     </sprites>
     <sprites name="misc">
       <sprite>sprites\spr_mugshot</sprite>
@@ -71,9 +72,16 @@
       </scripts>
     </scripts>
     <script>scripts\scr_draw_button.gml</script>
+    <scripts name="easers">
+      <script>scripts\ease_in_expo.gml</script>
+      <script>scripts\ease_out_expo.gml</script>
+      <script>scripts\ease_out_quint.gml</script>
+      <script>scripts\ease_in_quint.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_large</font>
+    <font>fonts\fnt_xxl</font>
     <font>fonts\fnt_small</font>
     <font>fonts\fnt_medium</font>
   </fonts>
@@ -114,7 +122,8 @@
   <rooms name="rooms">
     <room>rooms\rm_map</room>
   </rooms>
-  <constants number="32">
+  <constants number="34">
+    <constant name="MODE_INTERMISSION">0</constant>
     <constant name="RANGE_CATAPULT">3</constant>
     <constant name="PRICE_CATAPULT">40</constant>
     <constant name="BUILD_CATAPULT">1</constant>
@@ -142,6 +151,7 @@
     <constant name="RANGE_FIRETOWER">1</constant>
     <constant name="RANGE_ARCHERTOWER">2</constant>
     <constant name="RANGE_PALACE">0</constant>
+    <constant name="MODE_WAVE">1</constant>
     <constant name="CHAR_KING">0</constant>
     <constant name="CHAR_QUEEN">1</constant>
     <constant name="CHAR_DIPLOMAT">2</constant>
