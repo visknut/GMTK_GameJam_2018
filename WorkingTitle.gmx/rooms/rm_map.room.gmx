@@ -52,13 +52,13 @@
   </views>
   <instances>
     <instance objName="obj_castle" x="336" y="256" name="inst_AA7DE938" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_build" x="656" y="0" name="inst_5BFB2E82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_message" x="592" y="0" name="inst_9E32B6C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_favour" x="528" y="0" name="inst_2A29E6D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_build" x="528" y="0" name="inst_5BFB2E82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_message" x="464" y="0" name="inst_9E32B6C2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_favour" x="592" y="0" name="inst_2A29E6D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button_money" x="400" y="0" name="inst_525C13D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_kingdom" x="0" y="0" name="inst_B3B8B4C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_view" x="16" y="0" name="inst_1254CD9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_start_wave" x="464" y="0" name="inst_9DB26B2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_start_wave" x="656" y="0" name="inst_9DB26B2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="320" y="272" name="inst_B802D504" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="240" y="304" name="inst_D0FFB39F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="240" y="288" name="inst_852ED903" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
