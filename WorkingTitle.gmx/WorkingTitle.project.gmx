@@ -6,25 +6,38 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_castle</sprite>
-    <sprite>sprites\spr_palace</sprite>
     <sprite>sprites\spr_road</sprite>
     <sprite>sprites\spr_enemy</sprite>
-    <sprite>sprites\spr_catapult</sprite>
-    <sprite>sprites\spr_firetower</sprite>
-    <sprite>sprites\spr_archertower</sprite>
     <sprites name="gui_buttons">
       <sprite>sprites\spr_button_favour</sprite>
       <sprite>sprites\spr_button_build</sprite>
       <sprite>sprites\spr_button_start_wave</sprite>
       <sprite>sprites\spr_button_messages</sprite>
-      <sprite>sprites\spr_button_mask</sprite>
     </sprites>
     <sprites name="build_buttons">
       <sprite>sprites\spr_firetower_button</sprite>
       <sprite>sprites\spr_palace_button</sprite>
       <sprite>sprites\spr_catapult_button</sprite>
-      <sprite>sprites\spr_achtertower_button</sprite>
+      <sprite>sprites\spr_archertower_button</sprite>
+      <sprite>sprites\spr_build_marker</sprite>
+    </sprites>
+    <sprites name="masks">
+      <sprite>sprites\spr_small_mask</sprite>
+      <sprite>sprites\spr_medium_mask</sprite>
+      <sprite>sprites\spr_large_mask</sprite>
+    </sprites>
+    <sprites name="structures">
+      <sprite>sprites\spr_firetower</sprite>
+      <sprite>sprites\spr_castle</sprite>
+      <sprite>sprites\spr_palace</sprite>
+      <sprite>sprites\spr_catapult</sprite>
+      <sprite>sprites\spr_archertower</sprite>
+      <sprites name="ranges">
+        <sprite>sprites\spr_palace_range</sprite>
+        <sprite>sprites\spr_archertower_range</sprite>
+        <sprite>sprites\spr_catapult_range</sprite>
+        <sprite>sprites\spr_firetower_range</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -40,7 +53,14 @@
       <script>scripts\scr_draw_view_build.gml</script>
       <script>scripts\scr_draw_view_message.gml</script>
       <script>scripts\scr_draw_view_favour.gml</script>
+      <scripts name="building">
+        <script>scripts\scr_draw_build_marker.gml</script>
+        <script>scripts\scr_draw_build_buttons.gml</script>
+        <script>scripts\scr_draw_structure.gml</script>
+        <script>scripts\scr_build_structure.gml</script>
+      </scripts>
     </scripts>
+    <script>scripts\scr_draw_button.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_large</font>
@@ -48,6 +68,12 @@
     <font>fonts\fnt_medium</font>
   </fonts>
   <objects name="objects">
+    <objects name="build_buttons">
+      <object>objects\obj_archertower_button</object>
+      <object>objects\obj_firetower_button</object>
+      <object>objects\obj_catapult_button</object>
+      <object>objects\obj_palace_build_button</object>
+    </objects>
     <object>objects\obj_kingdom</object>
     <object>objects\obj_view</object>
     <objects name="structures">
@@ -58,7 +84,7 @@
       <object>objects\obj_firetower</object>
       <object>objects\obj_archertower</object>
     </objects>
-    <objects name="buttons">
+    <objects name="gui_buttons">
       <object>objects\obj_button_start_wave</object>
       <object>objects\obj_button_message</object>
       <object>objects\obj_button_money</object>
@@ -75,7 +101,10 @@
   <rooms name="rooms">
     <room>rooms\rm_map</room>
   </rooms>
-  <constants number="14">
+  <constants number="27">
+    <constant name="RANGE_CATAPULT">3</constant>
+    <constant name="PRICE_CATAPULT">40</constant>
+    <constant name="BUILD_CATAPULT">1</constant>
     <constant name="VIEW_BUILD">1</constant>
     <constant name="DEBUG">true</constant>
     <constant name="BLUE_SPEED">4</constant>
@@ -90,6 +119,16 @@
     <constant name="VIEW_NONE">0</constant>
     <constant name="VIEW_FAVOUR">2</constant>
     <constant name="VIEW_MESSAGE">3</constant>
+    <constant name="BUILD_NONE">0</constant>
+    <constant name="BUILD_ARCHERTOWER">2</constant>
+    <constant name="BUILD_FIRETOWER">3</constant>
+    <constant name="BUILD_PALACE">4</constant>
+    <constant name="PRICE_FIRETOWER">60</constant>
+    <constant name="PRICE_ARCHERTOWER">40</constant>
+    <constant name="PRICE_PALACE">140</constant>
+    <constant name="RANGE_FIRETOWER">1</constant>
+    <constant name="RANGE_ARCHERTOWER">2</constant>
+    <constant name="RANGE_PALACE">0</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
