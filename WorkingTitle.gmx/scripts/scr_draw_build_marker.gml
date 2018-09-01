@@ -3,8 +3,6 @@
 var _x = argument[0] - 8;
 var _y = argument[1] - 8;
 
-draw_set_halign(fa_left);
-
 switch (current_build)
 {
     case BUILD_NONE:

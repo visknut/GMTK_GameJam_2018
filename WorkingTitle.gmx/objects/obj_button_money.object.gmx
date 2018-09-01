@@ -31,7 +31,6 @@ var _x = x;
 var _y = y;
 var _money = 0;
 
-draw_set_halign(fa_left);
 draw_set_font(fnt_large);
 draw_set_colour(c_black);
 with(obj_kingdom)
