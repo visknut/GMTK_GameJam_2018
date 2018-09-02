@@ -249,7 +249,7 @@
     <constant name="DAMAGE_ARCHERTOWER">1</constant>
     <constant name="DAMAGE_CATAPULT">5</constant>
     <constant name="DAMAGE_FIRETOWER">1</constant>
-    <constant name="DEBUG">true</constant>
+    <constant name="DEBUG">false</constant>
     <constant name="EAST">6</constant>
     <constant name="GREEN_HEALTH">2</constant>
     <constant name="GREEN_NAME">"deer"</constant>

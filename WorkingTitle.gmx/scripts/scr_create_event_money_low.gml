@@ -28,7 +28,12 @@ with (obj_kingdom)
     favours[CHAR_KING] += favour_change;
 }
 
-_new_event = scr_enqueue_message(_new_event, CHAR_KING, "TODO: event_money_low");
+_new_event = scr_enqueue_message(_new_event, CHAR_KING,
+"My dear high constable,
+It has come to my ears that you are quite the big spender,
+even going so far as to going in to debt.
+
+It would be an understatement to say that I am unhappy about this.");
 
 with (obj_kingdom)
 {
