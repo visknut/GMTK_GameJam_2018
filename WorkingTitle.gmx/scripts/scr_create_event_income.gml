@@ -16,10 +16,10 @@ with (obj_kingdom)
     _favour_general = favours[CHAR_GENERAL];
 }
 
-_new_event.income_royal_donation = _favour_king + _favour_queen * _new_event.enconomy_modifier;
-_new_event.income_war_chest = _favour_general * 2 * _new_event.enconomy_modifier;
-_new_event.income_trade = _favour_diplomat * 2 * _new_event.enconomy_modifier;
-_new_event.total = _new_event.income_royal_donation + _new_event.income_war_chest + _new_event.income_trade;
+_new_event.income_royal_donation = floor(_favour_king + _favour_queen * _new_event.enconomy_modifier);
+_new_event.income_war_chest = floor(_favour_general * 2 * _new_event.enconomy_modifier);
+_new_event.income_trade = floor(_favour_diplomat * 2 * _new_event.enconomy_modifier);
+_new_event.total = floor(_new_event.income_royal_donation + _new_event.income_war_chest + _new_event.income_trade);
 
 with (obj_kingdom)
 {

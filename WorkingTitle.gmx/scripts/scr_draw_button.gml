@@ -37,7 +37,6 @@ if (mouse_x > _button_x - sprite_get_width(_sprite)
 && mouse_x < _button_x + sprite_get_width(_sprite)
 && mouse_y < _button_y + sprite_get_height(_sprite)
 && mouse_check_button_released(mb_left)) {
-    show_debug_message("Pressed");
     return true;
 } else {
     return false;

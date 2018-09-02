@@ -136,6 +136,7 @@
         <script>scripts\ease_in_quint.gml</script>
       </scripts>
       <script>scripts\scr_draw_button.gml</script>
+      <script>scripts\scr_draw_text_button.gml</script>
       <script>scripts\scr_object_count.gml</script>
     </scripts>
   </scripts>
