@@ -43,14 +43,13 @@ alarm[1] = -1;
 read_all = false;
 messages = ds_queue_create();
 read_messages = ds_queue_create();
-scr_enqueue_message(CHAR_KING, "Welcome!#Let's celebrate your arrival with a glass of wine!");
 
 favours = ar(5, 5, 5, 5) //favour_king, favour_queen, favour diplomat, favour general
 
-//TODO: plaats dit op de juiste plek in een event
-//General: total damage expressions
-//general_total_damage_classes = ar("their total annihilation.", "mildly inconvenient", "though for us to handle.", "your downfall from his majesties favourite spot.", "our total annihilation");
+events = ds_list_create();
+pending_events = ds_list_create();
 
+scr_generate_tutorial_events();
 character_fired = "";
 text_fired = "";
 </string>
@@ -86,8 +85,8 @@ yellow_damage_modifier = 1;
 yellow_spawn_modifier = 1;
 
 yellow_tributed = false;
-yellow_tributed = false;
-yellow_tributed = false;
+green_tributed = false;
+blue_tributed = false;
 
 collaberated_yellow_green_west = false;
 collaberated_yellow_green_south = false;
@@ -97,6 +96,29 @@ collaberated_blue_green_south = false;
 
 collaberated_yellow_blue_east = false;
 collaberated_yellow_blue_west = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialise text variables.
+
+general_total_damage_classes = ar("their total annihilation.", "mildly inconvenient", "though for us to handle.", "your downfall from his majesties favourite spot.", "our total annihilation");
 </string>
           </argument>
         </arguments>
@@ -122,6 +144,10 @@ collaberated_yellow_blue_west = false;
             <string>/// Destroy data structures.
 
 ds_queue_destroy(messages);
+ds_queue_destroy(read_messages);
+
+ds_list_destroy(events);
+ds_list_destroy(pending_events);
 </string>
           </argument>
         </arguments>
@@ -319,37 +345,11 @@ ds_queue_clear(obj_kingdom.messages);
 ds_queue_clear(obj_kingdom.read_messages);
 obj_kingdom.read_all = false;
 
-// TODO: put in right event
-// results
-//var _most_damage = BLUE_NAME;
-//if (yellow_damage &gt; blue_damage || green_damage &gt; blue_damage)
-//{
-//    if (green_damage &gt; yellow_damage)
-//        _most_damage = GREEN_NAME;
-//    else
-//        _most_damage = YELLOW_NAME;
-//}
-//var _tot_damage = yellow_damage + green_damage + blue_damage;
-//var _damage_class = _tot_damage % array_length_1d(general_total_damage_classes);
-//
-//scr_enqueue_message(CHAR_GENERAL, ""+
-//"Good morning High Constable,#"+
-//"it seems that yesterday did not bring the accursed enemies unto our doorstep.#" +
-//"That is a good thing, since that would have been " + general_total_damage_classes[_damage_class]);
-
-// events
-
-// predictions
-//scr_enqueue_message(CHAR_GENERAL, "");
-//scr_enqueue_message(CHAR_DIPLOMAT, "");
-
-// daily income
-//scr_enqueue_message(CHAR_CLERK, "");
-
-// dilliances
-//scr_enqueue_message(CHAR_KING, "");
-//scr_enqueue_message(CHAR_QUEEN, "");
-
+// Generate events.
+scr_generate_daily_events();
+scr_generate_follow_up_events();
+scr_generate_random_events();
+scr_generate_triggered_events();
 
 
 // Clean up and start new day
@@ -376,10 +376,8 @@ room_speed = 30;
 
 // Destory all spawns and remaining enemies.
 instance_destroy(obj_spawn);
-with (obj_enemy)
-{
-    instance_destroy();
-}
+instance_destroy(obj_enemy);
+
 </string>
           </argument>
         </arguments>
@@ -523,6 +521,7 @@ if (global.mode == MODE_FIRED)
         draw_text(360, 200, "You were fired by the " + character_fired + "!");
         draw_set_font(fnt_medium);
         draw_text(360, 240, text_fired);
+        // TODO: Let clerk steal money sometimes.
         draw_text(360, 320, "However, you did manage to embezzle " + string(money) + " gold...");
         // Reset aligned.
         draw_set_valign(fa_left);
