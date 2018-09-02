@@ -17,7 +17,7 @@ with (obj_kingdom)
             case struct_event_palace:
             {
                 var _new_count = scr_object_count(_event.location, obj_palace);
-                if (_new_count > _event.location.old_count)
+                if (_new_count > _event.old_count)
                 {
                     scr_create_event_palace_built(_new_count - _event.location.old_count);
                 } else
@@ -29,7 +29,7 @@ with (obj_kingdom)
             case struct_event_farm:
             {
                 var _new_count = scr_object_count(_event.location, obj_farm);
-                if (_new_count > _event.location.old_count)
+                if (_new_count > _event.old_count)
                 {
                     scr_create_event_farm_built(_new_count - _event.location.old_count);
                 } else

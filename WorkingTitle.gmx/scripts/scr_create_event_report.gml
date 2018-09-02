@@ -60,12 +60,14 @@ _new_event.message = scr_enqueue_message(CHAR_GENERAL,
 general_inspections[irandom(array_length_1d(general_inspections) - 1)] +
 ", I noticed that our " +
 _most_damage +
-" defense is clearly subpar.##" +
+" defense is clearly " +
+general_subpar_nouns[irandom(array_length_1d(general_subpar_nouns) - 1)] +
+" when compared to our other fronts.##" +
 
 "I would advise you " +
 common_accenting_adverb[irandom(array_length_1d(common_accenting_adverb) - 1)] +
 " to improve them, " +
-"as our enemies are sure to attack" +
+"as our enemies are sure to attack " +
 common_soon_nouns[irandom(array_length_1d(common_soon_nouns) - 1)] +
 ", with defenses this weak.");
 

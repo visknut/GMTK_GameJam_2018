@@ -11,7 +11,7 @@ switch (_location)
     {
         with (_object)
         {
-            if (_palace.x > 360 && _palace.y < 272)
+            if (x > 360 && y < 272)
             {
                 _count += 1;
             }
@@ -21,7 +21,7 @@ switch (_location)
     {
         with (_object)
         {
-            if (_palace.x < 360 && _palace.y < 272)
+            if (x < 360 && y < 272)
             {
                 _count += 1;
             }
@@ -31,7 +31,7 @@ switch (_location)
     {
         with (_object)
         {
-            if (_palace.x > 360 && _palace.y > 272)
+            if (x > 360 && y > 272)
             {
                 _count += 1;
             }
@@ -41,7 +41,7 @@ switch (_location)
     {
         with (_object)
         {
-            if (_palace.x < 360 && _palace.y > 272)
+            if (x < 360 && y > 272)
             {
                 _count += 1;
             }

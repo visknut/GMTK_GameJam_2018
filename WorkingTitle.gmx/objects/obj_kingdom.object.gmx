@@ -132,7 +132,7 @@ common_negative_adverb = ar("inconceivably", "terribly", "alarmingly", "regretfu
 common_angry_adverb = ar("abominably", "insultingly", "heineously", "wickedly", "devilishly", "insufferably");
 
 // commmon nouns
-common_soon_nouns = ar("soon", "soonish", "tomorrow for sure", "any day now", "surely by a fortnight", "");
+common_soon_nouns = ar("soon", "soonish", "tomorrow", "any day now", "by a fortnight");
 
 // king
 
@@ -143,6 +143,7 @@ common_soon_nouns = ar("soon", "soonish", "tomorrow for sure", "any day now", "s
 // general
 general_total_damage_classes = ar("their total annihilation", "mildly inconvenient", "though for us to handle", "your downfall from his majesties favour", "our total annihilation");
 general_inspections = ar("While walking the premises", "By sifting trough your battleplans", "When inspecting our standing army");
+general_subpar_nouns = ar("subpar", "not as strong as it should be", "not strong enough", "too weak", "not adequate");
 
 // clerk
 </string>
@@ -556,6 +557,36 @@ if (global.mode == MODE_FIRED)
 
     // Reset alpha.
     draw_set_alpha(1);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//increase roomspeed for debugging waves
+if (DEBUG &amp;&amp; room_speed == 30)
+{
+    room_speed = 1000;
+} else if (DEBUG)
+{
+    room_speed = 30
 }
 </string>
           </argument>
