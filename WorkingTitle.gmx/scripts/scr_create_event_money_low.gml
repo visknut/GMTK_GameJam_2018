@@ -1,0 +1,36 @@
+/// scr_create_event_money_low()
+
+var _new_event = instance_create(0, 0, struct_event_money_low);
+var _money = 0;
+
+with (obj_kingdom)
+{
+    _money = money;
+}
+
+// Determine lost favour.
+if (_money < -500)
+{
+    favour_change = -4;
+} else if (_money < -250)
+{
+    favour_change = -3;
+} else if (_money < -50)
+{
+    favour_change = -2;
+} else if (_money < 0)
+{
+    favour_change = -1;
+}
+
+with (obj_kingdom)
+{
+    favour_king += favour_change;
+}
+
+_new_event.message = scr_enqueue_message(CHAR_KING, "TODO: event_money_low");
+
+with (obj_kingdom)
+{
+    ds_list_add(events, _new_event);
+}
