@@ -1,7 +1,7 @@
 /// scr_draw_message(str content)
 
 var _x = 220;
-var _y = 448;
+var _y = 426;
 
 var _content = argument[0];
 

@@ -13,8 +13,8 @@ I'll keep you up to date with the movements of our enemies.");
 _new_event2 = scr_enqueue_message(_new_event2, CHAR_DIPLOMAT,
 "The lemmings of the west have agreed to a temporary truce,
 although I can not say how long it will last. Because of their sheer numbers,
-they are definitely more fickle than the strong and slow elephants of the south.
-My guess is that the antlers of the north-west will be fastest to agree to my offers."
+they are definitely more fickle than the strong and slow elephants of the north-west.
+My guess is that the deer of the south will be fastest to agree to my offers."
 );
 
 with (obj_kingdom)

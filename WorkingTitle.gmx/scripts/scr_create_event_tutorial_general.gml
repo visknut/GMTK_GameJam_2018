@@ -1,7 +1,7 @@
 /// scr_create_event_tutorial_general()
 
 var _new_event1 = instance_create(0, 0, struct_event_tutorial_general);
-var _new_event1 = instance_create(0, 0, struct_event_tutorial_general);
+var _new_event2 = instance_create(0, 0, struct_event_tutorial_general);
 
 _new_event1 = scr_enqueue_message(_new_event1, CHAR_GENERAL,
 "Aye sir,

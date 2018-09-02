@@ -115,11 +115,11 @@
       </scripts>
       <scripts name="diplomat">
         <script>scripts\scr_create_event_tutorial_diplomat.gml</script>
+        <script>scripts\scr_create_event_buff.gml</script>
+        <script>scripts\scr_create_event_collaboration.gml</script>
         <script>scripts\scr_create_event_tribute.gml</script>
         <script>scripts\scr_create_event_tribute_given.gml</script>
-        <script>scripts\scr_create_event_buff.gml</script>
         <script>scripts\scr_create_event_tribute_ignored.gml</script>
-        <script>scripts\scr_create_event_collaboration.gml</script>
       </scripts>
       <scripts name="general">
         <script>scripts\scr_create_event_tutorial_general.gml</script>

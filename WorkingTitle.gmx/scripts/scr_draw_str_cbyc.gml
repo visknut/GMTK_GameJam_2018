@@ -18,7 +18,11 @@ with (obj_view)
         alarm[0] = TEXT_SPEED_INV*_str_len;
     }
 
-    // draw string upto how long alarm has counted
+    // draw string up to how long alarm has counted
     var _substring = string_copy(_str, 0, _str_len-(alarm[0]/TEXT_SPEED_INV));
-    draw_text_ext(_x, _y, _substring, _char_height + 3, 430);
+    
+    // center text in the y_middle of the textbox
+    draw_set_valign(fa_middle);
+    draw_text_ext(_x, _y + sprite_get_height(spr_mugshot)/2, _substring, _char_height + 3, 430);
+    draw_set_valign(fa_top);
 }

@@ -8,7 +8,8 @@ _new_event.nation = _nations[irandom(2)];
 var _amounts = ar(20, 40, 60, 80, 100);
 _new_event.amount = _amounts[irandom(4)];
 
-_new_event = scr_enqueue_message(_new_event, CHAR_DIPLOMAT, "TODO: event_tribute");
+_new_event = scr_enqueue_message(_new_event, CHAR_DIPLOMAT,
+"");
 
 with (obj_kingdom)
 {
