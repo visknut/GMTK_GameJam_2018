@@ -50,13 +50,11 @@
             <kind>1</kind>
             <string>/// Fire at enemies.
 
-show_debug_message(alarm[0]);
 if (global.mode == MODE_WAVE &amp;&amp; alarm[0] == -1)
 {
     var _enemy = collision_rectangle(x - RANGE_CATAPULT, y - RANGE_CATAPULT, x + RANGE_CATAPULT + sprite_width, y + RANGE_CATAPULT + sprite_height, obj_enemy, false, true);
     if (_enemy != noone)
     {
-        show_debug_message("!");
         _enemy.hp -= DAMAGE_CATAPULT;
         alarm[0] = SPEED_CATAPULT;
     }
