@@ -22,6 +22,7 @@
       <sprite>sprites\spr_button_start_wave</sprite>
       <sprite>sprites\spr_button_messages</sprite>
       <sprite>sprites\spr_button_marker</sprite>
+      <sprite>sprites\spr_button_money</sprite>
     </sprites>
     <sprites name="build_buttons">
       <sprite>sprites\spr_firetower_button</sprite>

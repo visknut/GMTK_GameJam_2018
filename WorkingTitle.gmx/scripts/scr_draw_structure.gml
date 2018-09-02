@@ -34,16 +34,15 @@ switch (current_build)
         break;
 }
 
+
 // Check if the mouse is in map.
 _floor_x = floor(mouse_x / 16) * 16;
 _floor_y = floor(mouse_y / 16) * 16;
 if (mouse_x > 176 
 && mouse_y > 144
-&& mouse_x < 528
-&& mouse_y < 384
+&& mouse_x < 560 - sprite_get_width(_sprite)
+&& mouse_y < 416 - sprite_get_height(_sprite)
 && place_free(_floor_x, _floor_y)) {
-    _floor_x = floor(mouse_x / 16) * 16;
-    _floor_y = floor(mouse_y / 16) * 16;
     
     draw_sprite( _range, 0, _floor_x, _floor_y);
     if (scr_draw_button(_floor_x, _floor_y, _sprite, 0, "", 1, 0.7))

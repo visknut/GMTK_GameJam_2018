@@ -1,7 +1,7 @@
 /// scr_draw_mugshot(int character)
 
 var _x = 64;
-var _y = 448;
+var _y = 426;
 
 var _character = argument[0];
 
