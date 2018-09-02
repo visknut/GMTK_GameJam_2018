@@ -26,7 +26,17 @@ with (obj_kingdom)
     money += _new_event.total;
 }
 
-_new_event = scr_enqueue_message(_new_event, CHAR_CLERK, "TODO: event_income");
+
+
+_new_event = scr_enqueue_message(_new_event, CHAR_CLERK,
+"Godspeed, high constable!
+
+Today you will be able to spend a total of " + string(money) + " goldpieces, " +
+"due to the king and the queen gifting you a royal donation of " + string(_new_event.income_royal_donation) +
+" goldpieces, and due to the general and diplomat granting you a cut from the war chest and traderoutes of respectively " +
+string(_new_event.income_war_chest) +
+" and " + string(_new_event.income_trade) +
+" goldpieces before taxes.");
 
 with (obj_kingdom)
 {

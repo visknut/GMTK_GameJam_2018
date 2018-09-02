@@ -127,11 +127,11 @@
       </scripts>
       <scripts name="clerk">
         <script>scripts\scr_create_event_tutorial_clerk.gml</script>
+        <script>scripts\scr_create_event_income.gml</script>
         <script>scripts\scr_create_event_money_high.gml</script>
         <script>scripts\scr_create_event_embezzlement.gml</script>
         <script>scripts\scr_create_event_embezzlement_ignored.gml</script>
         <script>scripts\scr_create_event_embezzlement_accepted.gml</script>
-        <script>scripts\scr_create_event_income.gml</script>
       </scripts>
       <script>scripts\scr_generate_tutorial_events.gml</script>
       <script>scripts\scr_generate_triggered_events.gml</script>
@@ -230,7 +230,7 @@
   </rooms>
   <constants number="59">
     <constant name="BLUE_HEALTH">5</constant>
-    <constant name="BLUE_NAME">"Blue"</constant>
+    <constant name="BLUE_NAME">"elephants"</constant>
     <constant name="BLUE_SPAWN_RATE">60</constant>
     <constant name="BLUE_SPEED">2</constant>
     <constant name="BLUE">0</constant>
@@ -252,7 +252,7 @@
     <constant name="DEBUG">true</constant>
     <constant name="EAST">6</constant>
     <constant name="GREEN_HEALTH">2</constant>
-    <constant name="GREEN_NAME">"Green"</constant>
+    <constant name="GREEN_NAME">"deer"</constant>
     <constant name="GREEN_SPAWN_RATE">30</constant>
     <constant name="GREEN_SPEED">8</constant>
     <constant name="GREEN">1</constant>
@@ -284,7 +284,7 @@
     <constant name="VIEW_NONE">0</constant>
     <constant name="WEST">5</constant>
     <constant name="YELLOW_HEALTH">1</constant>
-    <constant name="YELLOW_NAME">"Yellow"</constant>
+    <constant name="YELLOW_NAME">"lemmings"</constant>
     <constant name="YELLOW_SPAWN_RATE">15</constant>
     <constant name="YELLOW_SPEED">4</constant>
     <constant name="YELLOW">2</constant>

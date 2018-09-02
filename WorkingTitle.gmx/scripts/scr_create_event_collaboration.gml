@@ -31,7 +31,10 @@ switch (_new_event.nation1)
 }
 
 _new_event = scr_enqueue_message(_new_event, CHAR_DIPLOMAT,
-"But that's not all");
+"But that's not all- I have had news from a trusted spy that the " +
+_nations[0] + " and " + _nations[1] + " " +
+diplomat_collaboration_sentences[irandom(array_length_1d(diplomat_collaboration_sentences)-1)] +
+"#If they were to attack, they might join forces!");
 
 with (obj_kingdom)
 {

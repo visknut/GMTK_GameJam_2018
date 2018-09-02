@@ -25,53 +25,6 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Initialise variables
-
-global.mode = MODE_INTERMISSION;
-
-yellow_damage = 0;
-blue_damage = 0;
-green_damage = 0;
-
-wave = 0;
-money = 100;
-embezzled_money = 0;
-
-alarm[0] = -1;
-alarm[1] = -1;
-
-read_all = false;
-messages = ds_queue_create();
-read_messages = ds_queue_create();
-
-favours = ar(5, 5, 5, 5) //favour_king, favour_queen, favour diplomat, favour general
-
-events = ds_list_create();
-pending_events = ds_list_create();
-
-scr_generate_tutorial_events();
-character_fired = "";
-text_fired = "";
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>/// Initialise enemy variables.
 
 speed_modifiers = ar(1, 1, 1); // blue, green, yellow
@@ -111,7 +64,7 @@ collaberated_yellow_blue_west = false;
             <string>/// Initialise text variables.
 
 // common adjectives
-common_excited_adjective = ar("thrilling", "great", "amazing", "blissful", "admirable", "celestial", "wicked", "hilarious");
+common_excited_adjective = ar("thrilling", "great", "amazing", "blissful", "admirable", "celestial", "wicked");
 common_positive_adjective = ar("bright", "laudable", "nice", "charming", "merry", "jovial", "humorous", "good");
 common_negative_adjective = ar("insulting", "inconceivable", "terrible", "alarming", "regretful", "mediocre");
 common_fiendish_adjective = ar("abominable", "accursed", "heineous", "wicked", "devilish", "ungodly", "insufferable");
@@ -131,6 +84,7 @@ common_soon_nouns = ar("soon", "soonish", "tomorrow", "any day now", "by a fortn
 // queen
 
 // diplomat
+diplomat_collaboration_sentences = ar("are collaborating.", "are working in concert with each other.", "have formed an alliance with each other.", "have started a joint effort.");
 
 // general
 general_total_damage_classes = ar("their total annihilation", "mildly inconvenient", "though for us to handle", "your downfall from his majesties favour", "our total annihilation");
@@ -138,6 +92,53 @@ general_inspections = ar("While walking the premises", "By sifting trough your b
 general_subpar_nouns = ar("subpar", "not as strong as it should be", "not strong enough", "too weak", "not adequate");
 
 // clerk
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initialise variables
+
+global.mode = MODE_INTERMISSION;
+
+yellow_damage = 0;
+blue_damage = 0;
+green_damage = 0;
+
+wave = 0;
+money = 100;
+embezzled_money = 0;
+
+alarm[0] = -1;
+alarm[1] = -1;
+
+read_all = false;
+messages = ds_queue_create();
+read_messages = ds_queue_create();
+
+favours = ar(5, 5, 5, 5) //favour_king, favour_queen, favour diplomat, favour general
+
+events = ds_list_create();
+pending_events = ds_list_create();
+
+scr_generate_tutorial_events();
+character_fired = "";
+text_fired = "";
 </string>
           </argument>
         </arguments>
