@@ -6,7 +6,7 @@ _new_event.favour_change = -1;
 
 with (obj_kingdom)
 {
-    favour_diplomat -= 1;
+    favours[CHAR_DIPLOMAT] -= 1;
 }
 
 _new_event.message = scr_enqueue_message(CHAR_DIPLOMAT, "TODO: event_tribute_ignored");

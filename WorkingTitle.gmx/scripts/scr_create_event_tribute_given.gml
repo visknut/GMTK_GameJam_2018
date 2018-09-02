@@ -10,7 +10,7 @@ _new_event.favour_change = 1;
 with (obj_kingdom)
 {
     money -= _amount;
-    favour_diplomat += 1;
+    favours[CHAR_DIPLOMAT] += 1;
     switch (_nation)
     {
         case GREEN_NAME:

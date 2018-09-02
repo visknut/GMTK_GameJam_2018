@@ -18,17 +18,17 @@ with (obj_kingdom)
     if (_total_damage > 20)
     {
         _new_event.favour_change = -3;
-        favour_general -= 3;
+        favours[CHAR_GENERAL] -= 3;
         _damage_class = 4;
     } else if (_total_damage > 10)
     {
         _new_event.favour_change = -2;
-        favour_general -= 2;
+        favours[CHAR_GENERAL] -= 2;
         _damage_class = 3;
     } else if (_total_damage > 5)
     {
         _new_event.favour_change = -1;
-        favour_general -= 1;
+        favours[CHAR_GENERAL] -= 1;
         _damage_class = 2;
     } else if (_total_damage > 1)
     {
@@ -36,7 +36,7 @@ with (obj_kingdom)
         _damage_class = 1;
     } else
     {   
-        favour_general += 1;
+        favours[CHAR_GENERAL] += 1;
         _new_event.favour_change = 1;
         _damage_class = 0;
     }

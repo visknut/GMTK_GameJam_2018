@@ -2,13 +2,13 @@
 
 var _new_event = instance_create(0, 0, struct_event_money_high);
 
-var _embazzled;
+var _embezzled;
 
 with (obj_kingdom)
 {
-    favour_king += 1;
-    _embazzled = floor((money - 999) / 2);
-    embazzled_money = _embazzled;
+    favours[CHAR_KING] += 1;
+    _embezzled = floor((money - 999) / 2);
+    embezzled_money = _embezzled;
     money = 999;
 }
 

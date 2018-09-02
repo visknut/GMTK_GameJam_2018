@@ -25,7 +25,7 @@ if (_money < -500)
 
 with (obj_kingdom)
 {
-    favour_king += favour_change;
+    favours[CHAR_KING] += favour_change;
 }
 
 _new_event.message = scr_enqueue_message(CHAR_KING, "TODO: event_money_low");

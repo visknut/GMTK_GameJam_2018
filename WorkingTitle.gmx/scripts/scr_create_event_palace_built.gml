@@ -10,7 +10,7 @@ if (_number_built == 1)
     _new_event.favour_change = 1;
     with (obj_kingdom)
     {
-        favour_king += 1;
+        favours[CHAR_KING] += 1;
     }
     
     _new_event.message = scr_enqueue_message(CHAR_KING, "TODO: palace_built (1)");
@@ -19,7 +19,7 @@ if (_number_built == 1)
     _new_event.favour_change = 2;
     with (obj_kingdom)
     {
-        favour_king += 2;
+        favours[CHAR_KING] += 2;
     }
     
     _new_event.message = scr_enqueue_message(CHAR_KING, "TODO: palace_built (>1)");

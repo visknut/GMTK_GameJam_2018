@@ -6,7 +6,7 @@ var _new_event = instance_create(0, 0, struct_event_view_palace_ignored);
 _new_event.favour_change = -1;
 with (obj_kingdom)
 {
-    favour_king -= 1;
+    favours[CHAR_KING] -= 1;
 }
 
 _new_event.message = scr_enqueue_message(CHAR_KING, "TODO: event_view_palace_ignored");

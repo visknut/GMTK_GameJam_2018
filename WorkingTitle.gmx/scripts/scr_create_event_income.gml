@@ -10,10 +10,10 @@ var _favour_king, _favour_queen, _favour_diplomat, _favour_general;
 
 with (obj_kingdom)
 {
-    _favour_king = favour_king;
-    _favour_queen = favour_queen;
-    _favour_diplomat = favour_diplomat;
-    _favour_general = favour_general;
+    _favour_king = favours[CHAR_KING];
+    _favour_queen = favours[CHAR_QUEEN];
+    _favour_diplomat = favours[CHAR_DIPLOMAT];
+    _favour_general = favours[CHAR_GENERAL];
 }
 
 _new_event.income_royal_donation = _favour_king + _favour_queen * _new_event.enconomy_modifier;
