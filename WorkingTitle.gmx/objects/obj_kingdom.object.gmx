@@ -74,15 +74,9 @@ text_fired = "";
             <kind>1</kind>
             <string>/// Initialise enemy variables.
 
-blue_speed_modifier = 1;
-blue_damage_modifier = 1;
-blue_spawn_modifier = 1;
-green_speed_modifier = 1;
-green_damage_modifier = 1;
-green_spawn_modifier = 1;
-yellow_speed_modifier = 1;
-yellow_damage_modifier = 1;
-yellow_spawn_modifier = 1;
+speed_modifiers = ar(1, 1, 1); // blue, green, yellow
+hp_modifiers = ar(1, 1, 1); // blue, green, yellow
+spawn_modifiers = ar(1, 1, 1); // blue, green, yellow
 
 tributes = ar(false, false, false);
 
@@ -173,6 +167,40 @@ ds_queue_destroy(read_messages);
 
 ds_list_destroy(events);
 ds_list_destroy(pending_events);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// End wave
+
+// Destory all spawns and remaining enemies.
+instance_destroy(obj_spawn);
+instance_destroy(obj_enemy);
+
+if (DEBUG)
+{
+    show_debug_message("yellow:" + string(yellow_damage));
+    show_debug_message("blue:" + string(blue_damage));
+    show_debug_message("green:" + string(green_damage));
+}
 </string>
           </argument>
         </arguments>
@@ -363,7 +391,7 @@ if (favours[CHAR_QUEEN] &gt; 0 &amp;&amp; favours[CHAR_KING] &gt; 0 &amp;&amp; f
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// End wave
+            <string>/// End wave mode
 
 
 // We don't want old messages messing up the inbox
@@ -398,9 +426,7 @@ alarm[5] = 60;
 
 room_speed = 30;
 
-// Destory all spawns and remaining enemies.
-instance_destroy(obj_spawn);
-instance_destroy(obj_enemy);
+
 
 </string>
           </argument>
@@ -429,6 +455,9 @@ instance_destroy(obj_enemy);
 // Start wave music
 audio_play_sound(sound0_GMTKgamemusic_enemy_wave_incoming_questionmark, 1, false);
 
+// Set wave length
+alarm[7] = 300;
+
 if (!DEBUG)
 {
     room_speed = 500;
@@ -436,9 +465,55 @@ if (!DEBUG)
 
 alarm[1] =  room_speed * audio_sound_length(sound0_GMTKgamemusic_enemy_wave_incoming_questionmark);
 
-scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE, pth_yellow, YELLOW_HEALTH, YELLOW_SPEED);
-scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE, pth_green, GREEN_HEALTH, GREEN_SPEED);
-scr_create_spawn(544, 288, c_blue, BLUE_SPAWN_RATE, pth_blue, BLUE_HEALTH, BLUE_SPEED);
+if (alarm[1] &lt; alarm[7])
+{
+    alarm[1] = alarm[7];
+}
+
+collaberated_yellow_green_west = false;
+collaberated_yellow_green_south = false;
+
+collaberated_blue_green_east = false;
+collaberated_blue_green_south = false;
+
+collaberated_yellow_blue_east = false;
+collaberated_yellow_blue_west = false;
+if (collaberated_yellow_green_west)
+{
+    scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE * spawn_modifiers[YELLOW] / 2, pth_yellow, YELLOW_HEALTH * hp_modifiers[YELLOW], YELLOW_SPEED * speed_modifiers[YELLOW]);
+    scr_create_spawn(160, 304, c_green, GREEN_SPAWN_RATE * spawn_modifiers[GREEN] / 2, pth_green, GREEN_HEALTH * hp_modifiers[GREEN], GREEN_SPEED * speed_modifiers[GREEN]);
+    scr_create_spawn(544, 288, c_blue, BLUE_SPAWN_RATE * spawn_modifiers[BLUE], pth_blue, BLUE_HEALTH * hp_modifiers[BLUE], BLUE_SPEED * speed_modifiers[BLUE]);
+} else if (collaberated_yellow_green_south)
+{
+    scr_create_spawn(368, 400, c_yellow, YELLOW_SPAWN_RATE * spawn_modifiers[YELLOW] / 2, pth_yellow, YELLOW_HEALTH * hp_modifiers[YELLOW], YELLOW_SPEED * speed_modifiers[YELLOW]);
+    scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE * spawn_modifiers[GREEN] / 2, pth_green, GREEN_HEALTH * hp_modifiers[GREEN], GREEN_SPEED * speed_modifiers[GREEN]);
+    scr_create_spawn(544, 288, c_blue, BLUE_SPAWN_RATE * spawn_modifiers[BLUE], pth_blue, BLUE_HEALTH * hp_modifiers[BLUE], BLUE_SPEED * speed_modifiers[BLUE]);
+} else if (collaberated_blue_green_east)
+{
+    scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE * spawn_modifiers[YELLOW], pth_yellow, YELLOW_HEALTH * hp_modifiers[YELLOW], YELLOW_SPEED * speed_modifiers[YELLOW]);
+    scr_create_spawn(544, 288, c_green, GREEN_SPAWN_RATE * spawn_modifiers[GREEN] / 2, pth_green, GREEN_HEALTH * hp_modifiers[GREEN], GREEN_SPEED * speed_modifiers[GREEN]);
+    scr_create_spawn(544, 288, c_blue, BLUE_SPAWN_RATE * spawn_modifiers[BLUE] /2, pth_blue, BLUE_HEALTH * hp_modifiers[BLUE], BLUE_SPEED * speed_modifiers[BLUE]);
+} else if (collaberated_blue_green_south)
+{
+    scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE * spawn_modifiers[YELLOW], pth_yellow, YELLOW_HEALTH * hp_modifiers[YELLOW], YELLOW_SPEED * speed_modifiers[YELLOW]);
+    scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE * spawn_modifiers[GREEN] / 2, pth_green, GREEN_HEALTH * hp_modifiers[GREEN], GREEN_SPEED * speed_modifiers[GREEN]);
+    scr_create_spawn(368, 400, c_blue, BLUE_SPAWN_RATE * spawn_modifiers[BLUE] / 2, pth_blue, BLUE_HEALTH * hp_modifiers[BLUE], BLUE_SPEED * speed_modifiers[BLUE]);
+} else if (collaberated_yellow_blue_east)
+{
+    scr_create_spawn(544, 288, c_yellow, YELLOW_SPAWN_RATE * spawn_modifiers[YELLOW] / 2, pth_yellow, YELLOW_HEALTH * hp_modifiers[YELLOW], YELLOW_SPEED * speed_modifiers[YELLOW]);
+    scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE * spawn_modifiers[GREEN], pth_green, GREEN_HEALTH * hp_modifiers[GREEN], GREEN_SPEED * speed_modifiers[GREEN]);
+    scr_create_spawn(544, 288, c_blue, BLUE_SPAWN_RATE * spawn_modifiers[BLUE] / 2, pth_blue, BLUE_HEALTH * hp_modifiers[BLUE], BLUE_SPEED * speed_modifiers[BLUE]);
+} else if (collaberated_yellow_blue_west)
+{
+    scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE * spawn_modifiers[YELLOW] / 2, pth_yellow, YELLOW_HEALTH * hp_modifiers[YELLOW], YELLOW_SPEED * speed_modifiers[YELLOW]);
+    scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE * spawn_modifiers[GREEN], pth_green, GREEN_HEALTH * hp_modifiers[GREEN], GREEN_SPEED * speed_modifiers[GREEN]);
+    scr_create_spawn(160, 304, c_blue, BLUE_SPAWN_RATE * spawn_modifiers[BLUE] / 2, pth_blue, BLUE_HEALTH * hp_modifiers[BLUE], BLUE_SPEED * speed_modifiers[BLUE]);
+} else {
+    scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE * spawn_modifiers[YELLOW], pth_yellow, YELLOW_HEALTH * hp_modifiers[YELLOW], YELLOW_SPEED * speed_modifiers[YELLOW]);
+    scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE * spawn_modifiers[GREEN], pth_green, GREEN_HEALTH * hp_modifiers[GREEN], GREEN_SPEED * speed_modifiers[GREEN]);
+    scr_create_spawn(544, 288, c_blue, BLUE_SPAWN_RATE * spawn_modifiers[BLUE], pth_blue, BLUE_HEALTH * hp_modifiers[BLUE], BLUE_SPEED * speed_modifiers[BLUE]);
+}
+
 </string>
           </argument>
         </arguments>

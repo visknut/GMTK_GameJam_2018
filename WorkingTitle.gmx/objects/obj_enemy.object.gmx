@@ -89,17 +89,27 @@ if (hp &lt; 1)
             <string>/// Destroy enemy
 
 var _colour = image_blend;
+var _hp = hp;
 
 with (obj_kingdom)
 {
     switch(_colour)
     {
         case c_yellow:
-            yellow_damage += 1;
+        {
+            yellow_damage += _hp;
+            break;
+        }
         case c_blue:
-            blue_damage += 1;
+        {
+            blue_damage += _hp;
+            break;
+        }
         case c_green:
-            green_damage += 1;
+        {
+            green_damage += _hp;
+            break;
+        }
     }
 }
 

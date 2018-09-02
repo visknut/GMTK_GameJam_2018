@@ -12,18 +12,21 @@ switch (_new_event.nation1)
         _nations = ar(GREEN_NAME, BLUE_NAME);
         _new_event.nation2 = _nations[irandom(1)];
         _new_event.location = EAST;
+        break;
     }
     case BLUE_NAME:
     {
         _nations = ar(GREEN_NAME, YELLOW_NAME);
         _new_event.nation2 = _nations[irandom(1)];
         _new_event.location = WEST;
+        break;
     }
     case GREEN_NAME:
     {
         _nations = ar(YELLOW_NAME, BLUE_NAME);
         _new_event.nation2 = _nations[irandom(1)];
         _new_event.location = SOUTH;
+        break;
     }
 }
 

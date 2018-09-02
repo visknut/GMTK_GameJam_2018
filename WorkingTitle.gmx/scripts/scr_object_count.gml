@@ -16,6 +16,7 @@ switch (_location)
                 _count += 1;
             }
         }
+        break;
     }
     case NORTH_WEST:
     {
@@ -26,6 +27,7 @@ switch (_location)
                 _count += 1;
             }
         }
+        break;
     }
     case SOUTH_EAST:
     {
@@ -36,6 +38,7 @@ switch (_location)
                 _count += 1;
             }
         }
+        break;
     }
     case SOUTH_WEST:
     {
@@ -46,6 +49,7 @@ switch (_location)
                 _count += 1;
             }
         }
+        break;
     }
 }
 

@@ -12,6 +12,7 @@ switch (irandom(2))
         break;
     case 2:
         audio_play_sound(sound3_button_quiet, 1, false);
+        break;
 }
 }
 else //loud
@@ -26,5 +27,6 @@ switch (irandom(2))
         break;
     case 2:
         audio_play_sound(sound3_button, 1, false);
+        break;
 }
 }
