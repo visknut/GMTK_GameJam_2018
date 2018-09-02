@@ -429,12 +429,12 @@ instance_destroy(obj_enemy);
 // Start wave music
 audio_play_sound(sound0_GMTKgamemusic_enemy_wave_incoming_questionmark, 1, false);
 
-alarm[1] = 600;
-
 if (!DEBUG)
 {
-    room_speed = 1000;
+    room_speed = 500;
 }
+
+alarm[1] =  room_speed * audio_sound_length(sound0_GMTKgamemusic_enemy_wave_incoming_questionmark);
 
 scr_create_spawn(160, 304, c_yellow, YELLOW_SPAWN_RATE, pth_yellow, YELLOW_HEALTH, YELLOW_SPEED);
 scr_create_spawn(368, 400, c_green, GREEN_SPAWN_RATE, pth_green, GREEN_HEALTH, GREEN_SPEED);
