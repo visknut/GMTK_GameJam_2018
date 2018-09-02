@@ -1,6 +1,7 @@
 /// scr_create_event_report()
 
-var _new_event = instance_create(0, 0, struct_event_report);
+var _new_event1 = instance_create(0, 0, struct_event_report);
+var _new_event2 = instance_create(0, 0, struct_event_report);
 var _most_damage = "north-western";
 var _total_damage, _damage_class;
 
@@ -43,7 +44,7 @@ with (obj_kingdom)
 }
 
 
-_new_event = scr_enqueue_message(_new_event, CHAR_GENERAL,
+_new_event1 = scr_enqueue_message(_new_event1, CHAR_GENERAL,
 "Good morning High Constable,#"+
 "it seems that yesterday " +
 common_surprised_adverb[irandom(array_length_1d(common_surprised_adverb) - 1)] +
@@ -57,7 +58,7 @@ common_positive_adjective[irandom(array_length_1d(common_positive_adjective) - 1
 general_total_damage_classes[_damage_class] + ".");
 
 
-_new_event = scr_enqueue_message(_new_event, CHAR_GENERAL,
+_new_event2 = scr_enqueue_message(_new_event2, CHAR_GENERAL,
 general_inspections[irandom(array_length_1d(general_inspections) - 1)] +
 ", I noticed that our " +
 _most_damage +
@@ -74,5 +75,6 @@ common_soon_nouns[irandom(array_length_1d(common_soon_nouns) - 1)] +
 
 with (obj_kingdom)
 {
-    ds_list_add(events, _new_event);
+    ds_list_add(events, _new_event1);
+    ds_list_add(events, _new_event2);
 }

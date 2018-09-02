@@ -97,39 +97,40 @@
     </scripts>
     <scripts name="events">
       <scripts name="king">
-        <script>scripts\scr_create_event_view_palace_ignored.gml</script>
-        <script>scripts\scr_create_event_palace.gml</script>
-        <script>scripts\scr_create_event_view_palace.gml</script>
-        <script>scripts\scr_create_event_view_palace_fixed.gml</script>
-        <script>scripts\scr_create_event_palace_built.gml</script>
         <script>scripts\scr_create_event_tutorial_king.gml</script>
         <script>scripts\scr_create_event_money_low.gml</script>
+        <script>scripts\scr_create_event_palace.gml</script>
+        <script>scripts\scr_create_event_palace_built.gml</script>
         <script>scripts\scr_create_event_palace_ignored.gml</script>
+        <script>scripts\scr_create_event_view_palace.gml</script>
+        <script>scripts\scr_create_event_view_palace_ignored.gml</script>
+        <script>scripts\scr_create_event_view_palace_fixed.gml</script>
       </scripts>
       <scripts name="queen">
+        <script>scripts\scr_create_event_tutorial_queen.gml</script>
         <script>scripts\scr_create_event_farm_ignored.gml</script>
         <script>scripts\scr_create_event_farm_built.gml</script>
         <script>scripts\scr_create_event_farm.gml</script>
       </scripts>
-      <scripts name="clerk">
-        <script>scripts\scr_create_event_money_high.gml</script>
-        <script>scripts\scr_create_event_embezzlement.gml</script>
-        <script>scripts\scr_create_event_embezzlement_ignored.gml</script>
-        <script>scripts\scr_create_event_embezzlement_accepted.gml</script>
-        <script>scripts\scr_create_event_income.gml</script>
-        <script>scripts\scr_create_event_tutorial_clerk.gml</script>
+      <scripts name="diplomat">
+        <script>scripts\scr_create_event_tutorial_diplomat.gml</script>
+        <script>scripts\scr_create_event_tribute.gml</script>
+        <script>scripts\scr_create_event_tribute_given.gml</script>
+        <script>scripts\scr_create_event_buff.gml</script>
+        <script>scripts\scr_create_event_tribute_ignored.gml</script>
+        <script>scripts\scr_create_event_collaboration.gml</script>
       </scripts>
       <scripts name="general">
         <script>scripts\scr_create_event_tutorial_general.gml</script>
         <script>scripts\scr_create_event_report.gml</script>
       </scripts>
-      <scripts name="diplomat">
-        <script>scripts\scr_create_event_tribute.gml</script>
-        <script>scripts\scr_create_event_tribute_given.gml</script>
-        <script>scripts\scr_create_event_buff.gml</script>
-        <script>scripts\scr_create_event_tribute_ignored.gml</script>
-        <script>scripts\scr_create_event_tutorial_diplomat.gml</script>
-        <script>scripts\scr_create_event_collaboration.gml</script>
+      <scripts name="clerk">
+        <script>scripts\scr_create_event_tutorial_clerk.gml</script>
+        <script>scripts\scr_create_event_money_high.gml</script>
+        <script>scripts\scr_create_event_embezzlement.gml</script>
+        <script>scripts\scr_create_event_embezzlement_ignored.gml</script>
+        <script>scripts\scr_create_event_embezzlement_accepted.gml</script>
+        <script>scripts\scr_create_event_income.gml</script>
       </scripts>
       <script>scripts\scr_generate_tutorial_events.gml</script>
       <script>scripts\scr_generate_triggered_events.gml</script>
