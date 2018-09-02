@@ -27,7 +27,7 @@ switch (_new_event.nation1)
     }
 }
 
-_new_event.message = scr_enqueue_message(CHAR_DIPLOMAT, "TODO: event_collaboration");
+_new_event = scr_enqueue_message(_new_event, CHAR_DIPLOMAT, "TODO: event_collaboration");
 
 with (obj_kingdom)
 {
