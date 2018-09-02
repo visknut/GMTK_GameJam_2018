@@ -40,7 +40,7 @@ with (obj_kingdom)
     }
 }
 
-_new_event.message = scr_enqueue_message(CHAR_DIPLOMAT, "TODO: event_buff");
+_new_event = scr_enqueue_message(_new_event, CHAR_DIPLOMAT, "TODO: event_buff");
 
 with (obj_kingdom)
 {

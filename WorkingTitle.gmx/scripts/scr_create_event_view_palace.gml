@@ -26,7 +26,7 @@ if (_palace.x > 360 && _palace.y < 272)
 var _new_event = instance_create(0, 0, struct_event_view_palace);
 _new_event.location = _location;
 
-_new_event.message = scr_enqueue_message(CHAR_KING, "TODO: event_view_palace");
+_new_event = scr_enqueue_message(_new_event, CHAR_KING, "TODO: event_view_palace");
 
 with (obj_kingdom)
 {

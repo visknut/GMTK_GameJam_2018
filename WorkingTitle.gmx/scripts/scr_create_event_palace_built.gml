@@ -13,7 +13,7 @@ if (_number_built == 1)
         favours[CHAR_KING] += 1;
     }
     
-    _new_event.message = scr_enqueue_message(CHAR_KING, "TODO: palace_built (1)");
+    _new_event = scr_enqueue_message(_new_event, CHAR_KING, "TODO: palace_built (1)");
 } else
 {
     _new_event.favour_change = 2;
@@ -22,7 +22,7 @@ if (_number_built == 1)
         favours[CHAR_KING] += 2;
     }
     
-    _new_event.message = scr_enqueue_message(CHAR_KING, "TODO: palace_built (>1)");
+    _new_event = scr_enqueue_message(_new_event, CHAR_KING, "TODO: palace_built (>1)");
 }
 
 with (obj_kingdom)

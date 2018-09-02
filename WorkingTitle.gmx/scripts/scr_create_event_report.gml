@@ -42,7 +42,8 @@ with (obj_kingdom)
     }
 }
 
-_new_event.message = scr_enqueue_message(CHAR_GENERAL,
+
+_new_event = scr_enqueue_message(_new_event, CHAR_GENERAL,
 "Good morning High Constable,#"+
 "it seems that yesterday " +
 common_surprised_adverb[irandom(array_length_1d(common_surprised_adverb) - 1)] +
@@ -56,7 +57,7 @@ common_positive_adjective[irandom(array_length_1d(common_positive_adjective) - 1
 general_total_damage_classes[_damage_class] + ".");
 
 
-_new_event.message = scr_enqueue_message(CHAR_GENERAL,
+_new_event = scr_enqueue_message(_new_event, CHAR_GENERAL,
 general_inspections[irandom(array_length_1d(general_inspections) - 1)] +
 ", I noticed that our " +
 _most_damage +

@@ -12,7 +12,7 @@ with (obj_kingdom)
     money = 999;
 }
 
-_new_event.message = scr_enqueue_message(CHAR_CLERK, "TODO: money_high");
+_new_event = scr_enqueue_message(_new_event, CHAR_CLERK, "TODO: money_high");
 
 with (obj_kingdom)
 {

@@ -1,15 +1,16 @@
 /// scr_draw_view_favour
 
-draw_set_colour(c_black);
-//draw_rectangle(0, 250, 720, 560, false);
+draw_set_colour(c_white);
 draw_rectangle(0, 416, 720, 560, false);
+draw_set_colour(c_black);
+draw_rectangle(4, 420, 716, 556, false);
 
 var _x = 64;
 var _y = 448;
 var _mugshot_width = 128;
 var _spacing = 32;
 var _favour = 0;
-var _radius = 50;
+var _radius = 48;
 
 var _brake = 50;
 if (alarm[1] == -1)
@@ -29,7 +30,7 @@ for (var _i = CHAR_KING; _i < CHAR_CLERK; _i += 1)
         var _radian = 2*pi/_favour;
         for (var _j = 0; _j < _favour; _j += 1)
         {
-            draw_sprite(spr_favour, 0, _x + _radius * cos(_radian*_j-alarm[1]/_brake) + 56,
+            draw_sprite(spr_favour, alarm[1]%12, _x + _radius * cos(_radian*_j-alarm[1]/_brake) + 56,
                                        _y + _radius * sin(_radian*_j-alarm[1]/_brake) + 25);
         }
     }

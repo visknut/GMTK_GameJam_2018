@@ -622,7 +622,6 @@
     <tile bgName="tiles_blue" x="304" y="96" w="16" h="16" xo="16" yo="192" id="10001815" name="inst_8FC1A5AA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_blue" x="256" y="64" w="16" h="16" xo="32" yo="0" id="10001817" name="inst_BDECC4EA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_blue" x="272" y="64" w="16" h="16" xo="48" yo="0" id="10001818" name="inst_0A002314" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="tiles_yellow" x="0" y="32" w="16" h="16" xo="32" yo="208" id="10001863" name="inst_1A3226D6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_blue" x="576" y="368" w="16" h="16" xo="32" yo="144" id="10001867" name="inst_EE288BB3" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_blue" x="592" y="368" w="16" h="16" xo="80" yo="128" id="10001868" name="inst_5803EB66" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_blue" x="592" y="384" w="16" h="16" xo="16" yo="144" id="10001869" name="inst_4852AE62" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -754,6 +753,8 @@
     <tile bgName="tiles_green" x="400" y="400" w="16" h="16" xo="64" yo="96" id="10002136" name="inst_3B583FF0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_green" x="400" y="416" w="16" h="16" xo="64" yo="96" id="10002137" name="inst_24C4A9C8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="tiles_green" x="400" y="432" w="16" h="16" xo="32" yo="112" id="10002138" name="inst_F85C2175" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_blue" x="224" y="80" w="16" h="16" xo="32" yo="224" id="10002140" name="inst_1BF758ED" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="tiles_blue" x="288" y="96" w="16" h="16" xo="32" yo="224" id="10002141" name="inst_168E71CC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
