@@ -6,6 +6,11 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\sound0_GMTKgamemusic_enemy_wave_incoming_questionmark</sound>
+    <sounds name="buttons">
+      <sound>sound\sound1_button</sound>
+      <sound>sound\sound2_button</sound>
+      <sound>sound\sound3_button</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="gui_buttons">
@@ -164,6 +169,7 @@
       <object>objects\obj_button_money</object>
       <object>objects\obj_button_favour</object>
       <object>objects\obj_button_build</object>
+      <object>objects\obj_button</object>
     </objects>
     <objects name="enemies">
       <object>objects\obj_enemy</object>
