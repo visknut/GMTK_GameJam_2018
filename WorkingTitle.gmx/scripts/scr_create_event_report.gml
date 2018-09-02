@@ -2,7 +2,7 @@
 
 var _new_event1 = instance_create(0, 0, struct_event_report);
 var _new_event2 = instance_create(0, 0, struct_event_report);
-var _most_damage = "north-western";
+var _most_damage = "northwestern";
 var _total_damage, _damage_class;
 
 with (obj_kingdom)
@@ -16,29 +16,29 @@ with (obj_kingdom)
     }
     _total_damage = yellow_damage + green_damage + blue_damage;
     
-    if (_total_damage > 20)
+    if (_total_damage > 40)
     {
-        _new_event.favour_change = -3;
+        _new_event1.favour_change = -3;
         favours[CHAR_GENERAL] -= 3;
         _damage_class = 4;
-    } else if (_total_damage > 10)
+    } else if (_total_damage > 20)
     {
-        _new_event.favour_change = -2;
+        _new_event1.favour_change = -2;
         favours[CHAR_GENERAL] -= 2;
         _damage_class = 3;
-    } else if (_total_damage > 5)
+    } else if (_total_damage > 10)
     {
-        _new_event.favour_change = -1;
+        _new_event1.favour_change = -1;
         favours[CHAR_GENERAL] -= 1;
         _damage_class = 2;
-    } else if (_total_damage > 1)
+    } else if (_total_damage > 5)
     {
-        _new_event.favour_change = 0;
+        _new_event1.favour_change = 0;
         _damage_class = 1;
     } else
     {   
         favours[CHAR_GENERAL] += 1;
-        _new_event.favour_change = 1;
+        _new_event1.favour_change = 1;
         _damage_class = 0;
     }
 }

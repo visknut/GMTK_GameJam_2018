@@ -246,7 +246,7 @@
     <constant name="CHAR_KING">0</constant>
     <constant name="CHAR_NOP">-1</constant>
     <constant name="CHAR_QUEEN">1</constant>
-    <constant name="DAMAGE_ARCHERTOWER">1</constant>
+    <constant name="DAMAGE_ARCHERTOWER">2</constant>
     <constant name="DAMAGE_CATAPULT">5</constant>
     <constant name="DAMAGE_FIRETOWER">1</constant>
     <constant name="DEBUG">false</constant>
@@ -276,7 +276,7 @@
     <constant name="SOUTH">4</constant>
     <constant name="SPEED_ARCHERTOWER">20</constant>
     <constant name="SPEED_CATAPULT">60</constant>
-    <constant name="SPEED_FIRETOWER">60</constant>
+    <constant name="SPEED_FIRETOWER">45</constant>
     <constant name="TEXT_SPEED_INV">1.2</constant>
     <constant name="VIEW_BUILD">1</constant>
     <constant name="VIEW_FAVOUR">2</constant>
@@ -285,8 +285,8 @@
     <constant name="WEST">5</constant>
     <constant name="YELLOW_HEALTH">1</constant>
     <constant name="YELLOW_NAME">"lemmings"</constant>
-    <constant name="YELLOW_SPAWN_RATE">15</constant>
-    <constant name="YELLOW_SPEED">4</constant>
+    <constant name="YELLOW_SPAWN_RATE">20</constant>
+    <constant name="YELLOW_SPEED">3</constant>
     <constant name="YELLOW">2</constant>
   </constants>
   <help>

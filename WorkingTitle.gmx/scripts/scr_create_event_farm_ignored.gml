@@ -9,7 +9,9 @@ with (obj_kingdom)
     favours[CHAR_QUEEN] -= 1;
 }
 
-_new_event = scr_enqueue_message(_new_event, CHAR_QUEEN, "TODO: event_farm_ignored");
+_new_event = scr_enqueue_message(_new_event, CHAR_QUEEN, "How " 
+    + common_negative_adjective[irandom(array_length_1d(common_negative_adjective) - 1)] 
+    + " that you did not follow my advice on building a farm for our people.");
 
 with (obj_kingdom)
 {
