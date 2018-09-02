@@ -10,6 +10,9 @@
       <sound>sound\sound1_button</sound>
       <sound>sound\sound2_button</sound>
       <sound>sound\sound3_button</sound>
+      <sound>sound\sound1_button_quiet</sound>
+      <sound>sound\sound2_button_quiet</sound>
+      <sound>sound\sound3_button_quiet</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -143,6 +146,7 @@
       <script>scripts\scr_draw_button.gml</script>
       <script>scripts\scr_draw_text_button.gml</script>
       <script>scripts\scr_object_count.gml</script>
+      <script>scripts\scr_button_sound.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

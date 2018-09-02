@@ -37,6 +37,7 @@ if (mouse_x > _button_x - sprite_get_width(_sprite)
 && mouse_x < _button_x + sprite_get_width(_sprite)
 && mouse_y < _button_y + sprite_get_height(_sprite)
 && mouse_check_button_released(mb_left)) {
+    scr_button_sound(true);
     return true;
 } else {
     return false;

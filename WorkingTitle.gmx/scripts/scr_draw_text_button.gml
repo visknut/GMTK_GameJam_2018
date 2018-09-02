@@ -35,6 +35,7 @@ if (mouse_x > _x
 && mouse_x < _x + _text_width + (2*_border)
 && mouse_y < _y + _text_height + (2*_border)
 && mouse_check_button_released(mb_left)) {
+    scr_button_sound(true);
     return true;
 } else {
     return false;
