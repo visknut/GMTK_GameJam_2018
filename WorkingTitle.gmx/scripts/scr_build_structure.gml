@@ -10,36 +10,50 @@ switch (current_build)
     case BUILD_CATAPULT:
         with (obj_kingdom)
         {
-           money -= PRICE_CATAPULT;
+            if (money - PRICE_CATAPULT > -999)
+            {
+                money -= PRICE_CATAPULT;
+                instance_create(_x, _y, obj_catapult);
+            }
         }
-        instance_create(_x, _y, obj_catapult);
         break;
     case BUILD_FIRETOWER:
         with (obj_kingdom)
         {
-            money -= PRICE_FIRETOWER;
+            if (money - PRICE_FIRETOWER > -999)
+            {
+                money -= PRICE_FIRETOWER;
+                instance_create(_x, _y, obj_firetower);
+            }
         }
-        instance_create(_x, _y, obj_firetower);
         break;
     case BUILD_ARCHERTOWER:
         with (obj_kingdom)
         {
-           money -= PRICE_ARCHERTOWER;
+            if (money - PRICE_ARCHERTOWER > -999)
+            {
+                money -= PRICE_ARCHERTOWER;
+                instance_create(_x, _y, obj_archertower);
+            }
         }
-        instance_create(_x, _y, obj_archertower);
         break;
     case BUILD_PALACE:
         with (obj_kingdom)
         {
-           money -= PRICE_PALACE;
+            if (money - PRICE_PALACE > -999)
+            {
+                money -= PRICE_PALACE;
+                instance_create(_x, _y, obj_palace);
+            }
         }
-        instance_create(_x, _y, obj_palace);
         break;
     case BUILD_FARM:
         with (obj_kingdom)
         {
-           money -= PRICE_FARM;
+            if (money - PRICE_FARM > -999)
+            {
+                money -= PRICE_FARM;
+                instance_create(_x, _y, obj_farm);
+            }
         }
-        instance_create(_x, _y, obj_farm);
-        break;
 }

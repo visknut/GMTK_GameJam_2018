@@ -6,7 +6,7 @@ draw_set_colour(c_black);
 draw_rectangle(4, 420, 716, 556, false);
 
 var _x = 64;
-var _y = 448;
+var _y = 426;
 var _mugshot_width = 128;
 var _spacing = 32;
 var _favour = 0;
@@ -30,8 +30,8 @@ for (var _i = CHAR_KING; _i < CHAR_CLERK; _i += 1)
         var _radian = 2*pi/_favour;
         for (var _j = 0; _j < _favour; _j += 1)
         {
-            draw_sprite(spr_favour, alarm[1]%12, _x + _radius * cos(_radian*_j-alarm[1]/_brake) + 56,
-                                       _y + _radius * sin(_radian*_j-alarm[1]/_brake) + 25);
+            draw_sprite(spr_favour, alarm[1]%18, _x + _radius * cos(_radian*_j-alarm[1]/_brake) + 56,
+                                       _y + _radius * sin(_radian*_j-alarm[1]/_brake) + 50);
         }
     }
     _x += _mugshot_width + _spacing;
