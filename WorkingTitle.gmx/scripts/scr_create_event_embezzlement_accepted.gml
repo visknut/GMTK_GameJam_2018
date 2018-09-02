@@ -10,7 +10,8 @@ with (obj_kingdom)
     embezzled_money += _amount;
 }
 
-_new_event = scr_enqueue_message(_new_event, CHAR_CLERK, "TODO: embezzlement_accepted");
+_new_event = scr_enqueue_message(_new_event, CHAR_CLERK,
+"Very good. You will be very happy when this investment pays of.");
 
 with (obj_kingdom)
 {

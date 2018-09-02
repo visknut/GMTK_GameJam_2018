@@ -14,7 +14,9 @@ with (obj_kingdom)
     tributes[_nation] = true;
 }
 
-_new_event = scr_enqueue_message(_new_event, CHAR_DIPLOMAT, "TODO: event_tribute_given");
+_new_event = scr_enqueue_message(_new_event, CHAR_DIPLOMAT,
+"That is great news! I will immediately send note of your decision to the relevant parties.
+They will be joyous!");
 
 with (obj_kingdom)
 {
