@@ -126,9 +126,13 @@ common_fiendish_adjective = ar("abominable", "accursed", "heineous", "wicked", "
 
 // common adverbs
 common_excited_adverb = ar("amazingly", "blissfully", "admirably", "hilarious");
+common_accenting_adverb = ar("dearly", "strongly", "sharply");
 common_surprised_adverb = ar("luckily", "shockingly", "unbelievably", "unexpectedly");
 common_negative_adverb = ar("inconceivably", "terribly", "alarmingly", "regretfuly");
 common_angry_adverb = ar("abominably", "insultingly", "heineously", "wickedly", "devilishly", "insufferably");
+
+// commmon nouns
+common_soon_nouns = ar("soon", "soonish", "tomorrow for sure", "any day now", "surely by a fortnight", "");
 
 // king
 
@@ -138,6 +142,7 @@ common_angry_adverb = ar("abominably", "insultingly", "heineously", "wickedly", 
 
 // general
 general_total_damage_classes = ar("their total annihilation", "mildly inconvenient", "though for us to handle", "your downfall from his majesties favour", "our total annihilation");
+general_inspections = ar("While walking the premises", "By sifting trough your battleplans", "When inspecting our standing army");
 
 // clerk
 </string>

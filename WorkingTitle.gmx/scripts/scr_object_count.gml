@@ -1,10 +1,7 @@
 /// scr_object_count(location [NORTH_EAST, NORTH_WEST, SOUTH_EAST, SOUTH_WEST], object)
 
-var _x1 = argument[0];
-var _y1 = argument[1];
-var _x2 = argument[2];
-var _y2 = argument[3];
-var _object = argument[4];
+var _location = argument[0];
+var _object = argument[1];
 
 var _count = 0;
 

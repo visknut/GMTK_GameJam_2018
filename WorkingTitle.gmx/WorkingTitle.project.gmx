@@ -119,7 +119,7 @@
         <script>scripts\scr_create_event_buff.gml</script>
         <script>scripts\scr_create_event_tribute_ignored.gml</script>
         <script>scripts\scr_create_event_tutorial_diplomat.gml</script>
-        <script>scripts\scr_create_event_collaberation.gml</script>
+        <script>scripts\scr_create_event_collaboration.gml</script>
       </scripts>
       <script>scripts\scr_generate_tutorial_events.gml</script>
       <script>scripts\scr_generate_triggered_events.gml</script>
@@ -187,7 +187,7 @@
           <object>objects\struct_event_tribute_ignored</object>
           <object>objects\struct_event_tribute_given</object>
           <object>objects\struct_event_buff</object>
-          <object>objects\struct_event_collaberation</object>
+          <object>objects\struct_event_collaboration</object>
           <object>objects\struct_event_tutorial_diplomat</object>
         </objects>
         <objects name="queen">

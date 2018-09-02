@@ -20,7 +20,7 @@ switch (irandom(4))
     }
     case 3:
     {
-        scr_create_event_collaberation();
+        scr_create_event_collaboration();
         break;
     }
     case 4:
