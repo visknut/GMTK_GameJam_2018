@@ -11,29 +11,14 @@ with (obj_kingdom)
 {
     money -= _amount;
     favours[CHAR_DIPLOMAT] += 1;
-    switch (_nation)
-    {
-        case GREEN_NAME:
-        {
-            green_tributed = true;
-            break;
-        }
-        case YELLOW_NAME:
-        {
-            yellow_tributed = true;
-            break;
-        }
-        case blue_NAME:
-        {
-            blue_tributed = true;
-            break;
-        }
-    }
+    tributes[_nation] = true;
 }
 
-_new_event.message = scr_enqueue_message(CHAR_DIPLOMAT, "TODO: event_tribute_given");
+_new_event = scr_enqueue_message(_new_event, CHAR_DIPLOMAT, "TODO: event_tribute_given");
 
 with (obj_kingdom)
 {
     ds_list_add(events, _new_event);
 }
+
+return _new_event;

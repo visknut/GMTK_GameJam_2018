@@ -6,7 +6,7 @@ var _new_event = instance_create(0, 0, struct_event_embezzlement);
 var _amounts = ar(20, 40, 60, 80, 100);
 _new_event.amount = _amounts[irandom(4)];
 
-_new_event.message = scr_enqueue_message(CHAR_CLERK, "TODO: event_embezzlement");
+_new_event = scr_enqueue_message(_new_event, CHAR_CLERK, "TODO: event_embezzlement");
 
 with (obj_kingdom)
 {

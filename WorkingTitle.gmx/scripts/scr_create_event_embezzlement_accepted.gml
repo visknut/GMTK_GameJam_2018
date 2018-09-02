@@ -10,9 +10,11 @@ with (obj_kingdom)
     embezzled_money += _amount;
 }
 
-_new_event.message = scr_enqueue_message(CHAR_CLERK, "TODO: embezzlement_accepted");
+_new_event = scr_enqueue_message(_new_event, CHAR_CLERK, "TODO: embezzlement_accepted");
 
 with (obj_kingdom)
 {
     ds_list_add(events, _new_event);
 }
+
+return _new_event;

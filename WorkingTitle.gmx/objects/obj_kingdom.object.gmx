@@ -84,9 +84,7 @@ yellow_speed_modifier = 1;
 yellow_damage_modifier = 1;
 yellow_spawn_modifier = 1;
 
-yellow_tributed = false;
-green_tributed = false;
-blue_tributed = false;
+tributes = ar(false, false, false);
 
 collaberated_yellow_green_west = false;
 collaberated_yellow_green_south = false;
@@ -289,13 +287,14 @@ yellow_damage = 0;
 blue_damage = 0;
 green_damage = 0;
 
+obj_view.current_view = VIEW_NONE;
+
 if (favours[CHAR_QUEEN] &gt; 0 &amp;&amp; favours[CHAR_KING] &gt; 0 &amp;&amp; favours[CHAR_DIPLOMAT] &gt; 0 &amp;&amp; favours[CHAR_GENERAL] &gt; 0)
 {
     alarm[0] = 120;
     alarm[4] = 60;
     wave += 1;
     global.mode = MODE_WAVE;
-    obj_view.current_view = VIEW_NONE;
 } else
 {
     global.mode = MODE_FIRED;
@@ -382,9 +381,7 @@ scr_generate_triggered_events();
 // Clean up and start new day
 
 /* reset all wave variables. */
-yellow_tributed = false;
-yellow_tributed = false;
-yellow_tributed = false;
+tributes = ar(false, false, false);
 
 collaberated_yellow_green_west = false;
 collaberated_yellow_green_south = false;

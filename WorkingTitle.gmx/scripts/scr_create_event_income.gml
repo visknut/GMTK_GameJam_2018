@@ -26,7 +26,7 @@ with (obj_kingdom)
     money += _new_event.total;
 }
 
-_new_event.message = scr_enqueue_message(CHAR_CLERK, "TODO: event_income");
+_new_event = scr_enqueue_message(_new_event, CHAR_CLERK, "TODO: event_income");
 
 with (obj_kingdom)
 {

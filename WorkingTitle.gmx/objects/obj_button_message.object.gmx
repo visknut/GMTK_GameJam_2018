@@ -30,6 +30,8 @@
 image_speed = 0;
 image_index = 4;
 
+event = noone;
+
 read_all = false;
 </string>
           </argument>
@@ -55,8 +57,12 @@ read_all = false;
             <kind>1</kind>
             <string>/// Open new message. Dequeue message and keep track of read messages
 
-message = ds_queue_dequeue(obj_kingdom.messages);
-ds_queue_enqueue(obj_kingdom.read_messages, message);
+if (event != noone)
+{
+    ds_queue_enqueue(obj_kingdom.read_messages, event);
+}
+event = ds_queue_dequeue(obj_kingdom.messages);
+
 if (ds_queue_empty(obj_kingdom.messages))
 {
     // we always read from the messages variable, so refill queue with 'read_messages'

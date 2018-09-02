@@ -9,7 +9,7 @@ with (obj_kingdom)
     favours[CHAR_KING] += 1;
 }
 
-_new_event.message = scr_enqueue_message(CHAR_KING, "TODO: view_palace_fixed");
+_new_event = scr_enqueue_message(_new_event, CHAR_KING, "TODO: view_palace_fixed");
 
 with (obj_kingdom)
 {

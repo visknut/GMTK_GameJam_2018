@@ -28,7 +28,7 @@ with (obj_kingdom)
     favours[CHAR_KING] += favour_change;
 }
 
-_new_event.message = scr_enqueue_message(CHAR_KING, "TODO: event_money_low");
+_new_event = scr_enqueue_message(_new_event, CHAR_KING, "TODO: event_money_low");
 
 with (obj_kingdom)
 {

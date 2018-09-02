@@ -85,9 +85,11 @@
       <scripts name="message">
         <script>scripts\scr_draw_mugshot.gml</script>
         <script>scripts\scr_draw_message.gml</script>
+        <script>scripts\scr_draw_message_embezzlement.gml</script>
         <script>scripts\scr_draw_str_cbyc.gml</script>
         <script>scripts\scr_enqueue_message.gml</script>
         <script>scripts\scr_create_message.gml</script>
+        <script>scripts\scr_draw_message_tribute.gml</script>
       </scripts>
     </scripts>
     <scripts name="events">
@@ -246,8 +248,8 @@
     <constant name="GREEN_NAME">"Green"</constant>
     <constant name="GREEN_SPAWN_RATE">120</constant>
     <constant name="GREEN_SPEED">1</constant>
-    <constant name="MODE_FIRED">2</constant>
     <constant name="MAX_FAVOUR">10</constant>
+    <constant name="MODE_FIRED">2</constant>
     <constant name="MODE_INTERMISSION">0</constant>
     <constant name="MODE_WAVE">1</constant>
     <constant name="NORTH_EAST">0</constant>

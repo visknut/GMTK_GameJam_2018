@@ -8,7 +8,8 @@ _new_event.location = _locations[irandom(3)];
 
 _new_event.old_count = scr_object_count(_new_event.location, obj_palace);
 
-_new_event.message = scr_enqueue_message(CHAR_KING, "TODO: event_palace");
+
+_new_event = scr_enqueue_message(_new_event, CHAR_KING, "TODO: event_palace");
 
 with (obj_kingdom)
 {
