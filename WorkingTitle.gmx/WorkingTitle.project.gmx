@@ -260,7 +260,7 @@
     <constant name="SPEED_ARCHERTOWER">20</constant>
     <constant name="SPEED_CATAPULT">60</constant>
     <constant name="SPEED_FIRETOWER">60</constant>
-    <constant name="TEXT_SPEED">2</constant>
+    <constant name="TEXT_SPEED_INV">1.2</constant>
     <constant name="VIEW_BUILD">1</constant>
     <constant name="VIEW_FAVOUR">2</constant>
     <constant name="VIEW_MESSAGE">3</constant>

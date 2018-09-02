@@ -44,9 +44,16 @@ with (obj_kingdom)
 
 
 _new_event.message = scr_enqueue_message(CHAR_GENERAL,
-"Good morning High Constable,"+
-"it seems that yesterday did not bring the accursed enemies unto our doorstep." +
-"That is a good thing, since that would have been " + general_total_damage_classes[_damage_class]);
+"Good morning High Constable,#"+
+"it seems that yesterday " +
+common_surprised_adverb[irandom%array_length_1d(common_surprised_adverb)] +
+" did not bring the " +
+common_fiendish_adjective[irandom%array_length_1d(common_fiendish_adjective)] +
+" enemies unto our doorstep.##" +
+"That is a " +
+common_positive_adjective[irandom%array_length_1d(common_positive_adjective)] +
+" thing, since that would have been " +
+general_total_damage_classes[_damage_class] + ".");
 
 with (obj_kingdom)
 {

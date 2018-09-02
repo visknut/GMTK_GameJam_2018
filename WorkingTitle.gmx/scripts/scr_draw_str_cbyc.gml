@@ -15,10 +15,10 @@ with (obj_view)
 // set alarm if none is set. alarms go to -1, so -2 is standby
     if (alarm[0] == -2)
     {
-        alarm[0] = TEXT_SPEED*_str_len;
+        alarm[0] = TEXT_SPEED_INV*_str_len;
     }
 
     // draw string upto how long alarm has counted
-    var _substring = string_copy(_str, 0, _str_len-(alarm[0]/TEXT_SPEED));
-    draw_text(_x, _y, _substring);
+    var _substring = string_copy(_str, 0, _str_len-(alarm[0]/TEXT_SPEED_INV));
+    draw_text_ext(_x, _y, _substring, _char_height + 3, 430);
 }
