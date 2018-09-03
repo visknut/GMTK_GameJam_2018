@@ -2,7 +2,7 @@
 
 var _new_event1 = instance_create(0, 0, struct_event_report);
 var _new_event2 = instance_create(0, 0, struct_event_report);
-var _most_damage = "northwestern";
+var _most_damage = "northeastern";
 var _total_damage, _damage_class;
 
 with (obj_kingdom)
