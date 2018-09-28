@@ -78,8 +78,10 @@
     </scripts>
     <scripts name="views">
       <script>scripts\scr_draw_view_build.gml</script>
+      <script>scripts\scr_draw_view_character_menu.gml</script>
+      <script>scripts\scr_draw_view_favour_indicator.gml</script>
+      <script>scripts\scr_draw_view_message_indicator.gml</script>
       <script>scripts\scr_draw_view_message.gml</script>
-      <script>scripts\scr_draw_view_favour.gml</script>
       <scripts name="building">
         <script>scripts\scr_draw_build_marker.gml</script>
         <script>scripts\scr_draw_build_buttons.gml</script>
@@ -95,6 +97,10 @@
         <script>scripts\scr_create_message.gml</script>
         <script>scripts\scr_draw_message_tribute.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="general">
+      <script>scripts\scr_create_event_tutorial_general.gml</script>
+      <script>scripts\scr_create_event_report.gml</script>
     </scripts>
     <scripts name="events">
       <scripts name="king">
@@ -120,10 +126,6 @@
         <script>scripts\scr_create_event_tribute.gml</script>
         <script>scripts\scr_create_event_tribute_given.gml</script>
         <script>scripts\scr_create_event_tribute_ignored.gml</script>
-      </scripts>
-      <scripts name="general">
-        <script>scripts\scr_create_event_tutorial_general.gml</script>
-        <script>scripts\scr_create_event_report.gml</script>
       </scripts>
       <scripts name="clerk">
         <script>scripts\scr_create_event_tutorial_clerk.gml</script>
@@ -225,10 +227,11 @@
       <object>objects\struct_message</object>
     </objects>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_map</room>
   </rooms>
-  <constants number="59">
+  <constants number="60">
     <constant name="BLUE_HEALTH">5</constant>
     <constant name="BLUE_NAME">"elephants"</constant>
     <constant name="BLUE_SPAWN_RATE">60</constant>
@@ -281,6 +284,7 @@
     <constant name="VIEW_BUILD">1</constant>
     <constant name="VIEW_FAVOUR">2</constant>
     <constant name="VIEW_MESSAGE">3</constant>
+    <constant name="VIEW_MESSAGES">4</constant>
     <constant name="VIEW_NONE">0</constant>
     <constant name="WEST">5</constant>
     <constant name="YELLOW_HEALTH">1</constant>

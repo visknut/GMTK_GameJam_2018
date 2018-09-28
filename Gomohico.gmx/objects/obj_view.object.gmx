@@ -120,7 +120,14 @@ switch(current_view)
         {
             draw_sprite(spr_button_marker, _image_index, x, y);
         }
-        scr_draw_view_favour();
+        scr_draw_view_character_menu(CHAR_GENERAL, scr_draw_view_favour_indicator);
+        break;
+    case VIEW_MESSAGES:
+        with (obj_button_message)
+        {
+            draw_sprite(spr_button_marker, _image_index, x, y);
+        }
+        scr_draw_view_character_menu(CHAR_CLERK, scr_draw_view_message_indicator);
         break;
     case VIEW_MESSAGE:
         with (obj_button_message)
