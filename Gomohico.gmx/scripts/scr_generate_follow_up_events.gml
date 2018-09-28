@@ -40,7 +40,9 @@ with (obj_kingdom)
             }
         }
     }
+    
+    // Clear the pending events for the new day.
+    ds_list_empty(pending_events);
 }
 
-// Clear the pending events for the new day.
-ds_list_empty(pending_events);
+
