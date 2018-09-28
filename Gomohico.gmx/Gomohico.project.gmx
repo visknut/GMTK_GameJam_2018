@@ -56,6 +56,7 @@
       <sprite>sprites\spr_kingdom</sprite>
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_reread</sprite>
+      <sprite>sprites\spr_gameloop</sprite>
       <sprite>sprites\spr_favour</sprite>
       <sprite>sprites\spr_mugshot</sprite>
     </sprites>
@@ -163,6 +164,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_kingdom</object>
+    <object>objects\obj_gameloop</object>
     <object>objects\obj_view</object>
     <objects name="structures">
       <object>objects\obj_catapult</object>

@@ -57,7 +57,7 @@
     <instance objName="obj_button_favour" x="592" y="0" name="inst_2A29E6D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button_money" x="16" y="8" name="inst_525C13D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_kingdom" x="-48" y="0" name="inst_B3B8B4C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_view" x="-64" y="-16" name="inst_1254CD9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_view" x="-192" y="-8" name="inst_1254CD9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_button_start_wave" x="656" y="0" name="inst_9DB26B2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="320" y="272" name="inst_B802D504" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="240" y="304" name="inst_D0FFB39F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -105,6 +105,8 @@
     <instance objName="obj_road" x="416" y="304" name="inst_1EC405C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="416" y="320" name="inst_582CBACA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_road" x="416" y="336" name="inst_5FC5C785" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gameloop" x="-128" y="-16" name="inst_30ED64F2" locked="0" code="" scaleX="5.33333349227905" scaleY="5.66666650772095" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gameloop" x="-368" y="144" name="inst_86B5FE5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="tiles_yellow" x="96" y="144" w="64" h="32" xo="0" yo="16" id="10000006" name="inst_187E4B18" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -52,9 +52,9 @@ image_speed = 0;
             <kind>1</kind>
             <string>/// Start new wave
 
-with (obj_kingdom)
+with (obj_gameloop)
 {
-    if (alarm[3] == -1 &amp;&amp; global.mode == MODE_INTERMISSION)
+    if (alarm[3] == -1 &amp;&amp; mode == MODE_INTERMISSION)
     {
         alarm[3] = 5;
     }
