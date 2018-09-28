@@ -12,7 +12,7 @@ var _spacing = 32;
 var _favour = 0;
 var _radius = 55;
 
-var _brake = 50;
+var _brake = 200;
 if (alarm[1] == -1)
 {
     alarm[1] = 360*_brake;
@@ -30,7 +30,7 @@ for (var _i = CHAR_KING; _i < CHAR_CLERK; _i += 1)
         var _radian = 2*pi/_favour;
         for (var _j = 0; _j < _favour; _j += 1)
         {
-            draw_sprite(spr_favour, alarm[1]%18, _x + _radius * cos(_radian*_j-alarm[1]/_brake) + 56,
+            draw_sprite(spr_favour, (alarm[1]/1.5 + _j/2 + _i*3) %18, _x + _radius * cos(_radian*_j-alarm[1]/_brake) + 56,
                                                  _y + _radius * sin(_radian*_j-alarm[1]/_brake) + 50);
         }
     }
