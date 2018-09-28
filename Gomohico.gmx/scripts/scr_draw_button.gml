@@ -32,8 +32,8 @@ if (_text != "") {
 }
 
 // Check if the button is being pressed.
-if (mouse_x > _button_x - sprite_get_width(_sprite)
-&& mouse_y > _button_y - sprite_get_height(_sprite)
+if (mouse_x > _button_x
+&& mouse_y > _button_y
 && mouse_x < _button_x + sprite_get_width(_sprite)
 && mouse_y < _button_y + sprite_get_height(_sprite)
 && mouse_check_button_released(mb_left)) {

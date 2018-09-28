@@ -266,16 +266,17 @@ if (obj_kingdom.favours[CHAR_QUEEN] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_K
 
 
 // We don't want old messages messing up the inbox
-ds_queue_clear(obj_kingdom.messages);
-ds_queue_clear(obj_kingdom.read_messages);
-obj_kingdom.read_all = false;
-
+for (_c = CHAR_KING; _c &lt;= CHAR_CLERK; _c++)
+{
+    ds_queue_clear(obj_kingdom.messages[_c]);
+    ds_queue_clear(obj_kingdom.read_messages[_c]);
+    obj_kingdom.read_all[_c] = false;
+}
 // Generate events.
 scr_generate_daily_events();
 scr_generate_follow_up_events();
 scr_generate_random_events();
 scr_generate_triggered_events();
-
 
 // Clean up and start new day
 
@@ -297,9 +298,6 @@ alarm[2] = 120;
 alarm[5] = 60;
 
 room_speed = 30;
-
-
-
 </string>
           </argument>
         </arguments>

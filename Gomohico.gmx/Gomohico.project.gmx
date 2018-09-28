@@ -95,13 +95,10 @@
         <script>scripts\scr_draw_message_embezzlement.gml</script>
         <script>scripts\scr_draw_str_cbyc.gml</script>
         <script>scripts\scr_enqueue_message.gml</script>
+        <script>scripts\scr_requeue_message.gml</script>
         <script>scripts\scr_create_message.gml</script>
         <script>scripts\scr_draw_message_tribute.gml</script>
       </scripts>
-    </scripts>
-    <scripts name="general">
-      <script>scripts\scr_create_event_tutorial_general.gml</script>
-      <script>scripts\scr_create_event_report.gml</script>
     </scripts>
     <scripts name="events">
       <scripts name="king">
@@ -127,6 +124,10 @@
         <script>scripts\scr_create_event_tribute.gml</script>
         <script>scripts\scr_create_event_tribute_given.gml</script>
         <script>scripts\scr_create_event_tribute_ignored.gml</script>
+      </scripts>
+      <scripts name="general">
+        <script>scripts\scr_create_event_tutorial_general.gml</script>
+        <script>scripts\scr_create_event_report.gml</script>
       </scripts>
       <scripts name="clerk">
         <script>scripts\scr_create_event_tutorial_clerk.gml</script>
@@ -188,6 +189,8 @@
       <object>objects\obj_spawn</object>
     </objects>
     <objects name="structs">
+      <object>objects\struct</object>
+      <object>objects\struct_message</object>
       <objects name="events">
         <object>objects\struct_event</object>
         <objects name="king">
@@ -226,14 +229,12 @@
           <object>objects\struct_event_tutorial_general</object>
         </objects>
       </objects>
-      <object>objects\struct_message</object>
     </objects>
   </objects>
-  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\rm_map</room>
   </rooms>
-  <constants number="60">
+  <constants number="62">
     <constant name="BLUE_HEALTH">5</constant>
     <constant name="BLUE_NAME">"elephants"</constant>
     <constant name="BLUE_SPAWN_RATE">60</constant>
@@ -256,6 +257,8 @@
     <constant name="DAMAGE_FIRETOWER">1</constant>
     <constant name="DEBUG">false</constant>
     <constant name="EAST">6</constant>
+    <constant name="EVENT_CHOICE">1</constant>
+    <constant name="EVENT_NORMAL">0</constant>
     <constant name="GREEN_HEALTH">2</constant>
     <constant name="GREEN_NAME">"deer"</constant>
     <constant name="GREEN_SPAWN_RATE">30</constant>

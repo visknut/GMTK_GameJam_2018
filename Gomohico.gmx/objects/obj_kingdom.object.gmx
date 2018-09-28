@@ -73,9 +73,10 @@ embezzled_money = 0;
 alarm[0] = -1;
 alarm[1] = -1;
 
-read_all = false;
-messages = ds_queue_create();
-read_messages = ds_queue_create();
+// we have separate message queues per character
+read_all = ar(false, false, false, false, false);
+messages = ar(ds_queue_create(), ds_queue_create(), ds_queue_create(), ds_queue_create(), ds_queue_create());
+read_messages = ar(ds_queue_create(), ds_queue_create(), ds_queue_create(), ds_queue_create(), ds_queue_create());
 
 favours = ar(5, 5, 5, 5) //favour_king, favour_queen, favour diplomat, favour general
 

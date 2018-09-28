@@ -21,7 +21,7 @@ with (obj_button_message)
         }
         default :
         {
-            scr_draw_message(event.message.content);
+            scr_draw_message(event);
             break;
         }
     } 

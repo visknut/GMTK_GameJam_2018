@@ -17,4 +17,7 @@ if (obj_view.alarm[0] < 0 && scr_draw_text_button(220, 525, "1. Sure, lets do it
     // reset typing animation.
     obj_view.alarm[0] = -2;
 }
+else{
+    scr_requeue_message(_event);
+}
 

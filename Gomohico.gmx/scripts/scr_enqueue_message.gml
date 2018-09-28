@@ -9,6 +9,6 @@ _message.character = _character;
 _message.content = _text;
 
 _event.message = _message;
-ds_queue_enqueue(obj_kingdom.messages, _event);
+ds_queue_enqueue(obj_kingdom.messages[_character], _event);
 
 return _event;
