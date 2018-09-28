@@ -53,11 +53,11 @@
       </sprites>
     </sprites>
     <sprites name="misc">
-      <sprite>sprites\spr_mugshot</sprite>
       <sprite>sprites\spr_kingdom</sprite>
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_reread</sprite>
       <sprite>sprites\spr_favour</sprite>
+      <sprite>sprites\spr_mugshot</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -134,9 +134,9 @@
         <script>scripts\scr_create_event_embezzlement_accepted.gml</script>
       </scripts>
       <script>scripts\scr_generate_tutorial_events.gml</script>
-      <script>scripts\scr_generate_triggered_events.gml</script>
       <script>scripts\scr_generate_follow_up_events.gml</script>
       <script>scripts\scr_generate_random_events.gml</script>
+      <script>scripts\scr_generate_triggered_events.gml</script>
       <script>scripts\scr_generate_daily_events.gml</script>
     </scripts>
     <scripts name="util">
@@ -277,7 +277,7 @@
     <constant name="SPEED_ARCHERTOWER">20</constant>
     <constant name="SPEED_CATAPULT">60</constant>
     <constant name="SPEED_FIRETOWER">45</constant>
-    <constant name="TEXT_SPEED_INV">1.2</constant>
+    <constant name="TEXT_SPEED_INV">0.4</constant>
     <constant name="VIEW_BUILD">1</constant>
     <constant name="VIEW_FAVOUR">2</constant>
     <constant name="VIEW_MESSAGE">3</constant>
