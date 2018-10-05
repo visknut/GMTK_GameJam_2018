@@ -59,6 +59,7 @@
       <sprite>sprites\spr_gameloop</sprite>
       <sprite>sprites\spr_favour</sprite>
       <sprite>sprites\spr_mugshot</sprite>
+      <sprite>sprites\spr_fade</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -231,11 +232,13 @@
         </objects>
       </objects>
     </objects>
+    <object>objects\obj_fade</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_map</room>
   </rooms>
-  <constants number="62">
+  <constants number="63">
+    <constant name="FADE_TIME">120</constant>
     <constant name="BLUE_HEALTH">5</constant>
     <constant name="BLUE_NAME">"elephants"</constant>
     <constant name="BLUE_SPAWN_RATE">60</constant>
@@ -256,7 +259,7 @@
     <constant name="DAMAGE_ARCHERTOWER">2</constant>
     <constant name="DAMAGE_CATAPULT">5</constant>
     <constant name="DAMAGE_FIRETOWER">1</constant>
-    <constant name="DEBUG">false</constant>
+    <constant name="DEBUG">true</constant>
     <constant name="EAST">6</constant>
     <constant name="EVENT_CHOICE">1</constant>
     <constant name="EVENT_NORMAL">0</constant>

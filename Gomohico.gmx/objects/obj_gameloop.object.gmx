@@ -43,41 +43,7 @@ text_fired = "";
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// End wave
-
-// Destory all spawns and remaining enemies.
-instance_destroy(obj_spawn);
-instance_destroy(obj_enemy);
-
-if (DEBUG)
-{
-    show_debug_message("yellow:" + string(yellow_damage));
-    show_debug_message("blue:" + string(blue_damage));
-    show_debug_message("green:" + string(green_damage));
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="6">
+    <event eventtype="2" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -102,66 +68,6 @@ if (DEBUG)
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Activate buttons.
-
-instance_activate_object(obj_view);
-instance_activate_object(obj_button_message);
-instance_activate_object(obj_button_money);
-instance_activate_object(obj_button_favour);
-instance_activate_object(obj_button_build);
-instance_activate_object(obj_button_start_wave);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Deactivate buttons.
-
-instance_deactivate_object(obj_view);
-instance_deactivate_object(obj_button_message);
-instance_deactivate_object(obj_button_money);
-instance_deactivate_object(obj_button_favour);
-instance_deactivate_object(obj_button_build);
-instance_deactivate_object(obj_button_start_wave);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -179,90 +85,7 @@ instance_deactivate_object(obj_button_start_wave);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Initiate wave sequence 3-0/4-1-2/5-(6)
-
-// Reset the damage on the castle.
-obj_kingdom.yellow_damage = 0;
-obj_kingdom.blue_damage = 0;
-obj_kingdom.green_damage = 0;
-
-obj_view.current_view = VIEW_NONE;
-
-if (obj_kingdom.favours[CHAR_QUEEN] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_KING] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_DIPLOMAT] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_GENERAL] &gt; 0)
-{
-    alarm[0] = 120;
-    alarm[4] = 60;
-    wave += 1;
-    mode = MODE_WAVE;
-} else
-{
-    mode = MODE_FIRED;
-    if (favours[CHAR_KING] &lt; 1)
-    {
-        character_fired = "king";
-        text_fired = "You disregarded what is the most important:#maintaining the respect of the people.";
-    } else if (favours[CHAR_GENERAL] &lt; 1)
-    {
-        character_fired = "general";
-        text_fired = "You disregarded what is the most important:#ensuring the safety of the country.";
-    } else if (favours[CHAR_QUEEN] &lt; 1)
-    {
-        character_fired = "queen";
-        text_fired = "You disregarded what is the most important:#ensuring the prosperty of the poeple.";
-    } else if (favours[CHAR_DIPLOMAT] &lt; 1)
-    {
-        character_fired = "diplomat";
-        text_fired = "You disregarded what is the most important:#maintaining the good relations with our neighbours.";
-    }
-    alarm[6] = 60;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Show day
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// End wave mode
+            <string>/// Start new day.
 
 
 // We don't want old messages messing up the inbox
@@ -294,16 +117,13 @@ obj_kingdom.collaberated_yellow_blue_west = false;
 
 mode = MODE_INTERMISSION;
 
-alarm[2] = 120;
-alarm[5] = 60;
-
 room_speed = 30;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -320,24 +140,64 @@ room_speed = 30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Start wave
+            <string>/// End wave
+
+// Create fade
+var _fade = instance_create(0, 0, obj_fade);
+_fade.text = "day " + string(wave);
+_fade.colour_text = c_black;
+_fade.colour_background = c_white;
+
+// Destory all spawns and remaining enemies.
+instance_destroy(obj_spawn);
+instance_destroy(obj_enemy);
+
+if (DEBUG)
+{
+    show_debug_message("yellow:" + string(obj_kingdom.yellow_damage));
+    show_debug_message("blue:" + string(obj_kingdom.blue_damage));
+    show_debug_message("green:" + string(obj_kingdom.green_damage));
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Start wave.
 
 // Start wave music
 audio_play_sound(sound0_GMTKgamemusic_enemy_wave_incoming_questionmark, 1, false);
 
 // Set wave length
-alarm[7] = 300;
+alarm[2] = 300;
 
 if (!DEBUG)
 {
     room_speed = 500;
 }
 
-alarm[1] =  room_speed * audio_sound_length(sound0_GMTKgamemusic_enemy_wave_incoming_questionmark);
+alarm[3] =  room_speed * audio_sound_length(sound0_GMTKgamemusic_enemy_wave_incoming_questionmark);
 
-if (alarm[1] &lt; alarm[7])
+if (alarm[3] &lt; alarm[2])
 {
-    alarm[1] = alarm[7];
+    alarm[3] = alarm[2];
 }
 
 obj_kingdom.collaberated_yellow_green_west = false;
@@ -390,6 +250,70 @@ if (obj_kingdom.collaberated_yellow_green_west)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Initiate wave sequence.
+
+// Create fade
+var _fade = instance_create(0, 0, obj_fade);
+_fade.text = "wave " + string(wave);
+
+// Reset the damage on the castle.
+obj_kingdom.yellow_damage = 0;
+obj_kingdom.blue_damage = 0;
+obj_kingdom.green_damage = 0;
+
+obj_view.current_view = VIEW_NONE;
+
+/* Check if the player is fired. If not, start the wave. */
+if (obj_kingdom.favours[CHAR_QUEEN] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_KING] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_DIPLOMAT] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_GENERAL] &gt; 0)
+{
+    alarm[1] = FADE_TIME;
+    wave += 1;
+    mode = MODE_WAVE;
+} else
+{
+    mode = MODE_FIRED;
+    if (obj_kingdom.favours[CHAR_KING] &lt; 1)
+    {
+        character_fired = "king";
+        text_fired = "You disregarded what is the most important:#maintaining the respect of the people.";
+    } else if (obj_kingdom.favours[CHAR_GENERAL] &lt; 1)
+    {
+        character_fired = "general";
+        text_fired = "You disregarded what is the most important:#ensuring the safety of the country.";
+    } else if (obj_kingdom.favours[CHAR_QUEEN] &lt; 1)
+    {
+        character_fired = "queen";
+        text_fired = "You disregarded what is the most important:#ensuring the prosperty of the poeple.";
+    } else if (obj_kingdom.favours[CHAR_DIPLOMAT] &lt; 1)
+    {
+        character_fired = "diplomat";
+        text_fired = "You disregarded what is the most important:#maintaining the good relations with our neighbours.";
+    }
+    alarm[4] = 60;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -407,83 +331,15 @@ if (obj_kingdom.collaberated_yellow_green_west)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (mode == MODE_WAVE &amp;&amp; alarm[0] &gt; 0)
+            <string>if (mode == MODE_FIRED)
 {
     draw_set_colour(c_black);
-    if (alarm[0] &gt; 90)
-    {
-        draw_set_alpha(1 - ease_out_quint(alarm[0] - 90, 0, 1, 30));
-    } else if (alarm[0] &lt; 30)
-    {
-    
-        draw_set_alpha(ease_in_quint(alarm[0], 0, 1, 30));
-    } else {
-        draw_set_alpha(1);
-    }
-    
-/*    if (alarm[0] &lt; 90 &amp;&amp; alarm[0] &gt; 75)
-    {
-        draw_set_alpha(1 - ease_in_quint(alarm[0] - 75, 0, 1, 15));
-    } else if (alarm[0] &lt; 45 &amp;&amp; alarm[0] &gt; 30)
-    {
-        draw_set_alpha(ease_in_quint(alarm[0] - 30, 0, 1, 15));
-    }*/
-    draw_rectangle(0, 0, 720, 560, false);
-    draw_set_colour(c_white);
-    draw_set_font(fnt_xxl);
-    draw_set_valign(fa_middle);
-    draw_set_halign(fa_center);
-    draw_text(360, 280, "wave " + string(wave));
-    // Reset aligned.
-    draw_set_valign(fa_left);
-    draw_set_halign(fa_top);
-    // Reset alpha.
-    draw_set_alpha(1);
-}
-
-if (mode == MODE_INTERMISSION &amp;&amp; alarm[2] &gt; 0)
-{
-    draw_set_colour(c_white);
-    if (alarm[2] &gt; 90)
-    {
-        draw_set_alpha(1 - ease_out_quint(alarm[2] - 90, 0, 1, 30));
-    } else if (alarm[2] &lt; 30)
-    {
-    
-        draw_set_alpha(ease_in_quint(alarm[2], 0, 1, 30));
-    } else {
-        draw_set_alpha(1);
-    }
+    draw_set_alpha(1 - ease_out_quint(alarm[4] - 30, 0, 1, 30));
     draw_rectangle(0, 0, 720, 560, false);
     
-/*    if (alarm[2] &lt; 90 &amp;&amp; alarm[2] &gt; 75)
+    if (alarm[4] &lt; 30)
     {
-        draw_set_alpha(1 - ease_in_quint(alarm[2] - 75, 0, 1, 15));
-    } else if (alarm[2] &lt; 45 &amp;&amp; alarm[2] &gt; 30)
-    {
-        draw_set_alpha(ease_in_quint(alarm[2] - 30, 0, 1, 15));
-    }*/
-    draw_set_colour(c_black);
-    draw_set_font(fnt_xxl);
-    draw_set_valign(fa_middle);
-    draw_set_halign(fa_center);
-    draw_text(360, 280, "day " + string(wave));
-    // Reset aligned.
-    draw_set_valign(fa_left);
-    draw_set_halign(fa_top);
-    // Reset alpha.
-    draw_set_alpha(1);
-}
-
-if (mode == MODE_FIRED)
-{
-    draw_set_colour(c_black);
-    draw_set_alpha(1 - ease_out_quint(alarm[6] - 30, 0, 1, 30));
-    draw_rectangle(0, 0, 720, 560, false);
-    
-    if (alarm[6] &lt; 30)
-    {
-        draw_set_alpha(1 - ease_out_quint(alarm[6], 0, 1, 30));
+        draw_set_alpha(1 - ease_out_quint(alarm[4], 0, 1, 30));
         draw_set_colour(c_white);
         draw_set_font(fnt_large);
         draw_set_valign(fa_middle);

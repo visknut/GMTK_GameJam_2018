@@ -54,9 +54,9 @@ image_speed = 0;
 
 with (obj_gameloop)
 {
-    if (alarm[3] == -1 &amp;&amp; mode == MODE_INTERMISSION)
+    if (alarm[0] == -1 &amp;&amp; mode == MODE_INTERMISSION)
     {
-        alarm[3] = 5;
+        alarm[0] = 5;
     }
 }
 </string>
