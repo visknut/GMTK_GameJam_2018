@@ -10,7 +10,7 @@ with (obj_kingdom)
 }
 
 _new_event = scr_enqueue_message(_new_event, CHAR_QUEEN, "How " 
-    + common_negative_adjective[irandom(array_length_1d(common_negative_adjective) - 1)] 
+    + pick(common_negative_adjective)
     + " that you did not follow my advice on building a farm for our people.");
 
 with (obj_kingdom)

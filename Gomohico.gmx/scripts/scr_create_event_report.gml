@@ -45,30 +45,30 @@ with (obj_kingdom)
     _new_event1 = scr_enqueue_message(_new_event1, CHAR_GENERAL,
     "Good morning High Constable,#"+
     "it seems that yesterday " +
-    common_surprised_adverb[irandom(array_length_1d(common_surprised_adverb) - 1)] +
+    pick(common_surprised_adverb) +
     " did not bring the " +
-    common_fiendish_adjective[irandom(array_length_1d(common_fiendish_adjective) - 1)] +
+    pick(common_fiendish_adjective) +
     " enemies unto our doorstep.##" +
     
     "That is a " +
-    obj_kingdom.common_positive_adjective[irandom(array_length_1d(common_positive_adjective) - 1)] +
+    pick(obj_kingdom.common_positive_adjective) +
     " thing, since that would have been " +
     general_total_damage_classes[_damage_class] + ".");
     
     
     _new_event2 = scr_enqueue_message(_new_event2, CHAR_GENERAL,
-    general_inspections[irandom(array_length_1d(general_inspections) - 1)] +
+    pick(general_inspections) +
     ", I noticed that our " +
     _most_damage +
     " defense is clearly " +
-    general_subpar_nouns[irandom(array_length_1d(general_subpar_nouns) - 1)] +
+    pick(general_subpar_nouns) +
     " when compared to our other fronts.##" +
     
     "I would advise you " +
-    common_accenting_adverb[irandom(array_length_1d(common_accenting_adverb) - 1)] +
+    pick(common_accenting_adverb) +
     " to improve them, " +
     "as our enemies are sure to attack " +
-    common_soon_nouns[irandom(array_length_1d(common_soon_nouns) - 1)] +
+    pick(common_soon_nouns) +
     ", with defenses this weak.");
 
     ds_list_add(events, _new_event1);

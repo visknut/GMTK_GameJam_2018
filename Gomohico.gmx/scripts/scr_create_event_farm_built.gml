@@ -16,7 +16,7 @@ with (obj_kingdom)
         
         _new_event = scr_enqueue_message(_new_event, CHAR_QUEEN, "I heard that you built a new farm in the "
         + _locations[_location] + " of our country. Very "
-        + common_positive_adjective[irandom(array_length_1d(common_positive_adjective) -1)] + "!");
+        + pick(common_positive_adjective) + "!");
     } else
     {
         _new_event.favour_change = 2;
@@ -24,7 +24,7 @@ with (obj_kingdom)
         
         _new_event = scr_enqueue_message(_new_event, CHAR_QUEEN, "I heard that you built multiple farms in the "
         + _locations[_location] + " of our country. That is "
-        + common_excited_adjective[irandom(array_length_1d(common_excited_adjective) -1)] + "!");
+        + pick(common_excited_adjective) + "!");
     }
 
     ds_list_add(events, _new_event);
