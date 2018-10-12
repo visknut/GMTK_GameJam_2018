@@ -18,18 +18,15 @@ with (obj_kingdom)
     
     if (_total_damage > 40)
     {
-        _new_event1.favour_change = -3;
-        favours[CHAR_GENERAL] -= 3;
+        _new_event1.favour_change = 30;
         _damage_class = 4;
     } else if (_total_damage > 20)
     {
         _new_event1.favour_change = -2;
-        favours[CHAR_GENERAL] -= 2;
         _damage_class = 3;
     } else if (_total_damage > 10)
     {
         _new_event1.favour_change = -1;
-        favours[CHAR_GENERAL] -= 1;
         _damage_class = 2;
     } else if (_total_damage > 5)
     {
@@ -37,10 +34,11 @@ with (obj_kingdom)
         _damage_class = 1;
     } else
     {   
-        favours[CHAR_GENERAL] += 1;
         _new_event1.favour_change = 1;
         _damage_class = 0;
     }
+    
+    scr_add_favour(CHAR_GENERAL,_new_event1.favour_change);
 
     _new_event1 = scr_enqueue_message(_new_event1, CHAR_GENERAL,
     "Good morning High Constable,#"+

@@ -55,6 +55,7 @@
     <sprites name="misc">
       <sprite>sprites\spr_kingdom</sprite>
       <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_spawn</sprite>
       <sprite>sprites\spr_reread</sprite>
       <sprite>sprites\spr_gameloop</sprite>
       <sprite>sprites\spr_favour</sprite>
@@ -160,6 +161,7 @@
       <script>scripts\scr_object_count.gml</script>
       <script>scripts\scr_button_sound.gml</script>
       <script>scripts\pick.gml</script>
+      <script>scripts\scr_add_favour.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -236,12 +238,12 @@
       </objects>
     </objects>
     <object>objects\obj_fade</object>
+    <object>objects\obj_corpse</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_map</room>
   </rooms>
   <constants number="63">
-    <constant name="FADE_TIME">120</constant>
     <constant name="BLUE_HEALTH">5</constant>
     <constant name="BLUE_NAME">"elephants"</constant>
     <constant name="BLUE_SPAWN_RATE">60</constant>
@@ -266,6 +268,7 @@
     <constant name="EAST">6</constant>
     <constant name="EVENT_CHOICE">1</constant>
     <constant name="EVENT_NORMAL">0</constant>
+    <constant name="FADE_TIME">120</constant>
     <constant name="GREEN_HEALTH">2</constant>
     <constant name="GREEN_NAME">"deer"</constant>
     <constant name="GREEN_SPAWN_RATE">30</constant>

@@ -6,11 +6,11 @@ var _nation = argument[1];
 var _new_event = instance_create(0, 0, struct_event_tribute_given);
 
 _new_event.favour_change = 1;
+scr_add_favour(CHAR_DIPLOMAT, _new_event.favour_change);
 
 with (obj_kingdom)
 {
     money -= _amount;
-    favours[CHAR_DIPLOMAT] += 1;
     tributes[_nation] = true;
 }
 

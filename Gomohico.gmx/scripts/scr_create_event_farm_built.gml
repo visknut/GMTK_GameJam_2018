@@ -12,7 +12,6 @@ with (obj_kingdom)
     if (_number_built == 1)
     {
         _new_event.favour_change = 1;
-        favours[CHAR_QUEEN] += 1;
         
         _new_event = scr_enqueue_message(_new_event, CHAR_QUEEN, "I heard that you built a new farm in the "
         + _locations[_location] + " of our country. Very "
@@ -20,12 +19,12 @@ with (obj_kingdom)
     } else
     {
         _new_event.favour_change = 2;
-        favours[CHAR_QUEEN] += 2;
         
         _new_event = scr_enqueue_message(_new_event, CHAR_QUEEN, "I heard that you built multiple farms in the "
         + _locations[_location] + " of our country. That is "
         + pick(common_excited_adjective) + "!");
     }
 
+    scr_add_favour(CHAR_QUEEN, _new_event.favour_change);
     ds_list_add(events, _new_event);
 }

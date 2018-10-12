@@ -3,10 +3,7 @@
 var _new_event = instance_create(0, 0, struct_event_money_low);
 var _money = 0;
 
-with (obj_kingdom)
-{
-    _money = money;
-}
+_money = obj_kingdom.money;
 
 // Determine lost favour.
 if (_money < -500)
@@ -23,10 +20,7 @@ if (_money < -500)
     favour_change = -1;
 }
 
-with (obj_kingdom)
-{
-    favours[CHAR_KING] += favour_change;
-}
+scr_add_favour(CHAR_KING, favour_change);
 
 _new_event = scr_enqueue_message(_new_event, CHAR_KING,
 "My dear high constable,
@@ -35,7 +29,4 @@ even going so far as to going in to debt.
 
 It would be an understatement to say that I am unhappy about this.");
 
-with (obj_kingdom)
-{
-    ds_list_add(events, _new_event);
-}
+ds_list_add(obj_kingdom.events, _new_event);
