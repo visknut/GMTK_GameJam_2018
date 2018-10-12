@@ -158,6 +158,7 @@
       <script>scripts\scr_object_count.gml</script>
       <script>scripts\scr_button_sound.gml</script>
       <script>scripts\pick.gml</script>
+      <script>scripts\scr_add_favour.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

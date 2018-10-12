@@ -6,7 +6,7 @@ var _embezzled;
 
 with (obj_kingdom)
 {
-    favours[CHAR_KING] += 1;
+    scr_add_favour(CHAR_KING, 1);
     _embezzled = floor((money - 999) / 2);
     embezzled_money = _embezzled;
     money = 999;

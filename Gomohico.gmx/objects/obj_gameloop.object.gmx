@@ -87,21 +87,26 @@ text_fired = "";
             <kind>1</kind>
             <string>/// Start new day.
 
+/* Create fade. */
+mode = MODE_INTERMISSION;
+var _fade = instance_create(0, 0, obj_fade);
+_fade.text = "day " + string(wave);
+_fade.colour_text = c_black;
+_fade.colour_background = c_white;
 
-// We don't want old messages messing up the inbox
-for (_c = CHAR_KING; _c &lt;= CHAR_CLERK; _c++)
+/* We don't want old messages messing up the inbox. */
+for (var _c = CHAR_KING; _c &lt;= CHAR_CLERK; _c++)
 {
     ds_queue_clear(obj_kingdom.messages[_c]);
     ds_queue_clear(obj_kingdom.read_messages[_c]);
     obj_kingdom.read_all[_c] = false;
 }
-// Generate events.
+
+/* Generate events. */
 scr_generate_daily_events();
 scr_generate_follow_up_events();
 scr_generate_random_events();
 scr_generate_triggered_events();
-
-// Clean up and start new day
 
 /* reset all wave variables. */
 obj_kingdom.tributes = ar(false, false, false);
@@ -139,13 +144,6 @@ room_speed = 30;
           <argument>
             <kind>1</kind>
             <string>/// End wave
-
-// Create fade
-mode = MODE_INTERMISSION;
-var _fade = instance_create(0, 0, obj_fade);
-_fade.text = "day " + string(wave);
-_fade.colour_text = c_black;
-_fade.colour_background = c_white;
 
 // Destory all spawns and remaining enemies.
 instance_destroy(obj_spawn);
@@ -348,7 +346,7 @@ if (obj_kingdom.favours[CHAR_QUEEN] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_K
         draw_set_font(fnt_medium);
         draw_text(360, 240, text_fired);
         // TODO: Let clerk steal money sometimes.
-        draw_text(360, 320, "However, you did manage to embezzle " + string(embezzled_money) + " gold...");
+        draw_text(360, 320, "However, you did manage to embezzle " + string(obj_kingdom.embezzled_money) + " gold...");
         // Reset aligned.
         draw_set_valign(fa_left);
         draw_set_halign(fa_top);
