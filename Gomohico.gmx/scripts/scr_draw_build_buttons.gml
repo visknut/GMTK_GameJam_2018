@@ -22,10 +22,10 @@ if (scr_draw_button(_x, _y, spr_catapult_button, 0, ""))
 
 draw_set_halign(fa_center);
 draw_set_colour(c_white);
-draw_set_font(fnt_medium);
-draw_text(_x + 16, _y + 44, string(PRICE_CATAPULT) + "g");
 draw_set_font(fnt_small);
-draw_text(_x + 16, _y + 64, "high damage");
+draw_text(_x + 16, _y + 40, "catapult");
+draw_set_font(fnt_medium);
+draw_text(_x + 16, _y + 54, string(PRICE_CATAPULT) + "g");
 draw_set_halign(fa_left);
 
 // Draw firetower button.
@@ -46,10 +46,10 @@ if (scr_draw_button(_x, _y, spr_firetower_button, 0, ""))
 
 draw_set_halign(fa_center);
 draw_set_colour(c_white);
-draw_set_font(fnt_medium);
-draw_text(_x + 16, _y + 44, string(PRICE_FIRETOWER) + "g");
 draw_set_font(fnt_small);
-draw_text(_x + 16, _y + 64, "AoE damage");
+draw_text(_x + 16, _y + 40, "bomb tower");
+draw_set_font(fnt_medium);
+draw_text(_x + 16, _y + 54, string(PRICE_FIRETOWER) + "g");
 draw_set_halign(fa_left);
 
 // Draw archertower button.
@@ -70,10 +70,10 @@ if (scr_draw_button(_x, _y, spr_archertower_button, 0, ""))
 
 draw_set_halign(fa_center);
 draw_set_colour(c_white);
-draw_set_font(fnt_medium);
-draw_text(_x + 16, _y + 44, string(PRICE_ARCHERTOWER) + "g");
 draw_set_font(fnt_small);
-draw_text(_x + 16, _y + 64, "rapid fire");
+draw_text(_x + 16, _y + 40, "archers");
+draw_set_font(fnt_medium);
+draw_text(_x + 16, _y + 54, string(PRICE_ARCHERTOWER) + "g");
 draw_set_halign(fa_left);
 
 // Draw palace button.
@@ -94,10 +94,10 @@ if (scr_draw_button(_x, _y, spr_palace_button, 0, ""))
 
 draw_set_halign(fa_center);
 draw_set_colour(c_white);
-draw_set_font(fnt_medium);
-draw_text(_x + 16, _y + 44, string(PRICE_PALACE) + "g");
 draw_set_font(fnt_small);
-draw_text(_x + 16, _y + 64, "great vacations");
+draw_text(_x + 16, _y + 40, "palace");
+draw_set_font(fnt_medium);
+draw_text(_x + 16, _y + 54, string(PRICE_PALACE) + "g");
 draw_set_halign(fa_left);
 
 // Draw palace button.
@@ -118,8 +118,8 @@ if (scr_draw_button(_x, _y, spr_farm_button, 0, ""))
 
 draw_set_halign(fa_center);
 draw_set_colour(c_white);
-draw_set_font(fnt_medium);
-draw_text(_x + 16, _y + 44, string(PRICE_FARM) + "g");
 draw_set_font(fnt_small);
-draw_text(_x + 16, _y + 64, "food source");
+draw_text(_x + 16, _y + 40, "farm");
+draw_set_font(fnt_medium);
+draw_text(_x + 16, _y + 54, string(PRICE_FARM) + "g");
 draw_set_halign(fa_left);

@@ -346,7 +346,13 @@ if (obj_kingdom.favours[CHAR_QUEEN] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_K
         draw_set_font(fnt_medium);
         draw_text(360, 240, text_fired);
         // TODO: Let clerk steal money sometimes.
-        draw_text(360, 320, "However, you did manage to embezzle " + string(obj_kingdom.embezzled_money) + " gold...");
+        if (obj_kingdom.embezzled_money &lt;= 0)
+        {
+            draw_text(360, 320, "You didn't manage to embezzle any gold...");
+        } else
+        {
+            draw_text(360, 320, "However, you did manage to embezzle " + string(obj_kingdom.embezzled_money) + " gold...");
+        }
         // Reset aligned.
         draw_set_valign(fa_left);
         draw_set_halign(fa_top);
