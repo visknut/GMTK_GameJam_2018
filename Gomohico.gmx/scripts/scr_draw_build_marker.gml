@@ -19,4 +19,7 @@ switch (current_build)
     case BUILD_PALACE:
         draw_sprite(spr_build_marker, 0, _x + 384, _y);
         break;
+    case BUILD_FARM:
+        draw_sprite(spr_build_marker, 0, _x + 512, _y);
+        break;
 }
