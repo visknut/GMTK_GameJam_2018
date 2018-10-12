@@ -115,8 +115,6 @@ obj_kingdom.collaberated_blue_green_south = false;
 obj_kingdom.collaberated_yellow_blue_east = false;
 obj_kingdom.collaberated_yellow_blue_west = false;
 
-mode = MODE_INTERMISSION;
-
 room_speed = 30;
 </string>
           </argument>
@@ -143,6 +141,7 @@ room_speed = 30;
             <string>/// End wave
 
 // Create fade
+mode = MODE_INTERMISSION;
 var _fade = instance_create(0, 0, obj_fade);
 _fade.text = "day " + string(wave);
 _fade.colour_text = c_black;
@@ -151,6 +150,7 @@ _fade.colour_background = c_white;
 // Destory all spawns and remaining enemies.
 instance_destroy(obj_spawn);
 instance_destroy(obj_enemy);
+instance_destroy(obj_corpse);
 
 if (DEBUG)
 {
