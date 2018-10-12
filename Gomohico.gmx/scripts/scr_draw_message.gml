@@ -12,5 +12,3 @@ draw_set_font(fnt_small);
 draw_set_color(c_white);
 scr_draw_str_cbyc(_x, _y, _content);
 draw_set_color(_tmpcol);
-
-scr_requeue_message(_event);

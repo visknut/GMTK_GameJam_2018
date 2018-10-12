@@ -362,7 +362,7 @@ if (obj_kingdom.favours[CHAR_QUEEN] &gt; 0 &amp;&amp; obj_kingdom.favours[CHAR_K
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="32">
+    <event eventtype="9" enumb="68">
       <action>
         <libid>1</libid>
         <id>603</id>

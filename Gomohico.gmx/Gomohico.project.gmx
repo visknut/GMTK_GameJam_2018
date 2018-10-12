@@ -79,26 +79,29 @@
       <script>scripts\scr_create_spawn.gml</script>
     </scripts>
     <scripts name="views">
-      <script>scripts\scr_draw_view_build.gml</script>
       <script>scripts\scr_draw_view_character_menu.gml</script>
-      <script>scripts\scr_draw_view_favour_indicator.gml</script>
-      <script>scripts\scr_draw_view_message_indicator.gml</script>
-      <script>scripts\scr_draw_view_message.gml</script>
       <scripts name="building">
+        <script>scripts\scr_draw_view_build.gml</script>
         <script>scripts\scr_draw_build_marker.gml</script>
         <script>scripts\scr_draw_build_buttons.gml</script>
         <script>scripts\scr_draw_structure.gml</script>
         <script>scripts\scr_build_structure.gml</script>
       </scripts>
       <scripts name="message">
+        <script>scripts\scr_draw_view_message.gml</script>
+        <script>scripts\scr_draw_view_message_indicator.gml</script>
         <script>scripts\scr_draw_mugshot.gml</script>
         <script>scripts\scr_draw_message.gml</script>
         <script>scripts\scr_draw_message_embezzlement.gml</script>
         <script>scripts\scr_draw_str_cbyc.gml</script>
+        <script>scripts\scr_dequeue_message.gml</script>
         <script>scripts\scr_enqueue_message.gml</script>
         <script>scripts\scr_requeue_message.gml</script>
         <script>scripts\scr_create_message.gml</script>
         <script>scripts\scr_draw_message_tribute.gml</script>
+      </scripts>
+      <scripts name="favour">
+        <script>scripts\scr_draw_view_favour_indicator.gml</script>
       </scripts>
     </scripts>
     <scripts name="events">

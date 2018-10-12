@@ -56,7 +56,42 @@ read_all = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Open/close favour view.
+            <string>/// Refill messagequeue of character if it was interrupted after reading the last message
+
+// only refill when were interupted in normal character reading flow
+if (obj_button_message.event != noone)
+{
+    _prev_char = obj_button_message.event.message.character;
+    // only refill if character had nothing more to say
+    if (ds_queue_empty(obj_kingdom.messages[_prev_char]))
+    {
+        // this may seem redundant, but was the DRYest I could get this mess.
+        // this way, if we change the way we dequeue messages, at least it will also change here
+        // or at the very least, throw an error so we know whatsup
+        scr_dequeue_message(_prev_char);
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Open/close message view.
 
 with (obj_view)
 {

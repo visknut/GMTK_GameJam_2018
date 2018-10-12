@@ -104,6 +104,10 @@ alarm[0] = -2; // standby-mode
 
 var _image_index = image_index;
 
+if keyboard_check_pressed(vk_escape) {
+    current_view = VIEW_NONE;
+}
+
 switch(current_view)
 {
     case VIEW_NONE:
